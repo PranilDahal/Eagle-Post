@@ -1,0 +1,69 @@
+SETUP:
+
+*** You are expected to know the basics of JAVA and MYSQL for working on this project. However, if you aren't too familiar with them, its not the end of the world. With help from us, you can easily learn and be able to contribute to the project.
+Feel free to ask for help.***
+
+STEP 1 
+JDK setup: 
+You should have JDK 8 or later installed in your system. It should also be in your PATH.
+To verify this, run "java -version". You should get:
+    "java version "1.8.0_111"
+    Java(TM) SE Runtime Environment (build 1.8.0_111-b14)
+    Java HotSpot(TM) 64-Bit Server VM (build 25.111-b14, mixed mode)" 
+OR SOMETHING CLOSE.
+
+STEP2 
+MYSQL Setup:
+You should have MYSQL setup in your machine. If you don't, then download it.
+For windows, you can get the installer from https://dev.mysql.com/downloads/windows/installer/. Install the developer package.
+Get the latest version. 8.0+ is recommended.
+Run "mysql --version"
+It should give you something like
+	mysql  Ver 8.0.12 for Win64 on x86_64 (MySQL Community Server - GPL)
+***** You will need to put your database username and password in the application.properties file
+inside src->main->resources. **** You need to change the following properties:
+spring.datasource.username=root
+spring.datasource.password=password
+
+
+STEP 3
+Maven setup:
+Maven is downloadable as a zip file at http://maven.apache.org/download.cgi. 
+Only the binaries are required, so look for the link to apache-maven-{version}-bin.zip or apache-maven-{version}-bin.tar.gz.
+Once you have downloaded the zip file, unzip it to your computer. Then add the bin folder to your path.
+To test the Maven installation, run mvn from the command-line: "mvn -v"
+You should get something like:
+    Apache Maven 3.5.4 (1edded0938998edf8bf061f1ceb3cfdeccf443fe; 2018-06-17T11:33:14-07:00)
+    Maven home: D:\apache-maven-3.5.4\bin\..
+    Java version: 1.8.0_111, vendor: Oracle Corporation, runtime: D:\Program Files\java\jre
+    Default locale: en_US, platform encoding: Cp1252
+    OS name: "windows 10", version: "10.0", arch: "amd64", family: "windows" OR SOMETHING CLOSE
+
+STEP 4
+Clone the project from Github.
+git clone https://github.com/calstatelaacm/SocialMediaApp.git
+
+STEP 5
+** You are expected to have eclispe setup and java path configured inside eclipse in your machine.**
+run "mvn eclipse:eclipse" in the project root directory.
+This will setup your project so you can work in eclipse.
+
+STEP 6
+Open eclipse
+File->Import
+Maven -> Existing maven projects
+Import the project folder
+
+STEP 7 (MYSQL Configuration)
+Go to mysql workbench (or you can directly do it from the commandline/terminal) and run:
+CREATE SCHEMA acm;
+After that, go to scr->main->resources->sql inside the project.
+You will see a script named test.sql.
+Run that script INSIDE the acm database you just created.
+
+STEP 8
+From the project root directory (the place where you see Pom.xml), run the following command:
+"mvn clean package spring-boot:run"
+Go to localhost:8080
+Go to localhost:8080/SetupTest
+These urls should be functional. The latter should return some values from the database.
