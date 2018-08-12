@@ -11,13 +11,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @RestController
 public class MiscControllers<SetupTestObject> {
-	
+
 	@Autowired
 	SetupDatabaseBean setupTestBean;
-	
+
 	@RequestMapping("/SetupTest")
-    public List<acm.objects.SetupTestObject> testSetup() {
+	public List<acm.objects.SetupTestObject> testSetup() {
 		return setupTestBean.getTestValues() ;
-    }
-	
+	}
+
 }
