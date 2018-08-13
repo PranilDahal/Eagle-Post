@@ -35,7 +35,6 @@ public class SetupDatabaseBean {
 		this.insertTestValue = new SimpleJdbcInsert(dataSource).withTableName("testsetup");
 	}
 
-
 	public List<SetupTestObject> getTestValues() {
 		
 		List<SetupTestObject> employees = this.jdbcTemplate.query(LIST_TEST, new TestValuesMapper());
@@ -52,14 +51,8 @@ public class SetupDatabaseBean {
 
 		Number newId = insertTestValue.executeAndReturnKey(parameters);
 		return newId.intValue();
-	}
-	
-	public void runCommand(String command){
 		
-		this.jdbcTemplate.execute(command);
-
 	}
-
 
 	private static final class TestValuesMapper implements RowMapper<SetupTestObject> {
 
