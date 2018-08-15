@@ -3,6 +3,8 @@ package acm.objects;
 import java.sql.Date;
 
 public class SimpleStatusUpdate extends AbstractPost{
+	
+	public String ssuId;
 
 	public String title;
 
@@ -10,8 +12,9 @@ public class SimpleStatusUpdate extends AbstractPost{
 
 	public Date datePosted;
 
-	public SimpleStatusUpdate(String title, String description, Date datePosted) {
+	public SimpleStatusUpdate(String id, String title, String description, Date datePosted) {
 		super();
+		this.ssuId = id;
 		this.title = title;
 		this.description = description;
 		this.datePosted = datePosted;
@@ -55,6 +58,16 @@ public class SimpleStatusUpdate extends AbstractPost{
 
 	public void setDatePosted(Date datePosted) {
 		this.datePosted = datePosted;
+	}
+
+
+	public String getId() {
+		return ssuId;
+	}
+
+
+	public void setId(String id) {
+		this.ssuId = id;
 	}
 
 }
