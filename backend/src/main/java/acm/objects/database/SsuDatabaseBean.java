@@ -20,6 +20,11 @@ import org.springframework.stereotype.Component;
 import acm.objects.SimpleStatusUpdate;
 import acm.objects.SsuPostData;
 
+/**
+ * @author Pranil
+ * @description Database connection class for SSU.
+ *
+ */
 @Component
 public class SsuDatabaseBean {
 
@@ -39,6 +44,9 @@ public class SsuDatabaseBean {
 	}
 
 
+	/**
+	 * @return ALL the SSUs that are in the database
+	 */
 	public List<SimpleStatusUpdate> getAllSSUs() {
 
 		List<SimpleStatusUpdate> ssu = this.jdbcTemplate.query(GET_ALL_SSU, new SsuValuesMapper());
@@ -46,12 +54,20 @@ public class SsuDatabaseBean {
 
 	}
 
+	/**
+	 * @param ssuId - (String) id of the SSU to retrieve
+	 * @return One SSU object.
+	 */
 	public SimpleStatusUpdate getSsuFromId(String ssuId) {
 		SimpleStatusUpdate ssu = this.jdbcTemplate.queryForObject(GET_SSU_FROM_ID, new Object[] {ssuId}, new SsuValuesMapper());
 		return ssu;
 	}
 
 
+	/**
+	 * @param dataToAdd - SsuPostData object
+	 * @return returns (-1) if failed to insert | returns the ssuId of the SSU if successfully inserted
+	 */
 	public int insertSsu(SsuPostData dataToAdd) {
 		Map<String, Object> parameters = new HashMap<String, Object>();
 

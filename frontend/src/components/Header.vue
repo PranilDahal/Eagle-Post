@@ -11,6 +11,8 @@
 						<img src="./../assets/img/csula-heading.png" alt="Cal State LA" style="width:50px;height:60px;">
 					</a>
 
+					<a class="navbar-link golden_link" href="index.html">Post</a>
+
 					<ul class="navbar-nav">
 						<li class="navbar-menu-item">
 							<a class="navbar-link golden_link" href="index.html">Home</a>

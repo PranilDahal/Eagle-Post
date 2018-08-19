@@ -2,11 +2,23 @@ package acm.objects;
 
 import java.sql.Date;
 
+/**
+ * @author Pranil
+ * 
+ * @description This is a class for user accounts that are personal.
+ *
+ */
 public class HumanUser extends AbstractUser{
+	
+	public int userId;
 
 	public String firstName;
 	
 	public String lastName;
+	
+	public String userName;
+	
+	public String password;
 	
 	public String CIN;
 	
@@ -17,19 +29,27 @@ public class HumanUser extends AbstractUser{
 	public Date birthDay;
 	
 	public String secretCode;
-	
-	public HumanUser(String firstName, String lastName, String CIN, String phoneNumber, String emailAddress,
-			Date birthDay, String secretCode) {
+
+	public HumanUser(int userId, String firstName, String lastName, String userName, String password, String cin,
+			String phoneNumber, String emailAddress, Date birthDay, String secretCode) {
 		super();
+		this.userId = userId;
 		this.firstName = firstName;
 		this.lastName = lastName;
-		this.CIN = CIN;
+		this.userName = userName;
+		this.password = password;
+		this.CIN = cin;
 		this.phoneNumber = phoneNumber;
 		this.emailAddress = emailAddress;
 		this.birthDay = birthDay;
 		this.secretCode = secretCode;
 	}
 
+	/**
+	 * @see acm.objects.AbstractUser#postAPost(acm.objects.AbstractPost)
+	 * 
+	 * @description DO NOT USE THIS METHOD. ITS NOT FUNCITONAL YET.
+	 */
 	@Override
 	public boolean postAPost(AbstractPost Post) {
 		return Post.uploadToDatabase();
@@ -90,7 +110,29 @@ public class HumanUser extends AbstractUser{
 	public void setSecretCode(String secretCode) {
 		this.secretCode = secretCode;
 	}
-	
-	
+
+	public int getUserId() {
+		return userId;
+	}
+
+	public void setUserId(int userId) {
+		this.userId = userId;
+	}
+
+	public String getUserName() {
+		return userName;
+	}
+
+	public void setUserName(String userName) {
+		this.userName = userName;
+	}
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
 
 }

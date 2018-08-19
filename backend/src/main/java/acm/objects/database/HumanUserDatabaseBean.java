@@ -16,6 +16,11 @@ import acm.objects.HumanUser;
 import acm.objects.SetupTestObject;
 import acm.objects.SimpleStatusUpdate;
 
+/**
+ * @author Pranil
+ * @description Database connection class for Human Users.
+ *
+ */
 @Component
 public class HumanUserDatabaseBean {
 
@@ -33,30 +38,22 @@ public class HumanUserDatabaseBean {
 	}
 
 
-	public List<HumanUser> getAllUsers() {
+//	public List<HumanUser> getAllUsers() {
+//
+//		List<HumanUser> humans = this.jdbcTemplate.query(GET_ALL_USERS, new UsersMapper());
+//		return humans;
+//
+//	}
 
-		List<HumanUser> humans = this.jdbcTemplate.query(GET_ALL_USERS, new UsersMapper());
-		return humans;
-
-	}
-
-	private static class UsersMapper implements RowMapper<HumanUser> {
-
-		@Override
-		public HumanUser mapRow(ResultSet rs, int rowNum) throws SQLException {
-
-			String firstName = rs.getString("first_name");
-			String lastName = rs.getString("last_name");
-			String cin = rs.getString("cin");
-			String phoneNumber = rs.getString("phone_number");
-			String emailAddress = rs.getString("email_address");
-			Date birthDay = rs.getDate("birthday");
-			String secretCode = rs.getString("secret_code");
-			
-			return new HumanUser(firstName, lastName, cin, phoneNumber, emailAddress, birthDay, secretCode);
-
-		}
-
-	}
+//	private static class UsersMapper implements RowMapper<HumanUser> {
+//
+//		@Override
+//		public HumanUser mapRow(ResultSet rs, int rowNum) throws SQLException {
+//			
+//			return new HumanUser(null);
+//
+//		}
+//
+//	}
 
 }

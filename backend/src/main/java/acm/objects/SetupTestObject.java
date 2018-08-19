@@ -1,6 +1,11 @@
 package acm.objects;
 
-// This is just a dummy object for testing the development environment setup.
+
+/**
+ * @author dahal
+ *
+ *@description This is just a dummy object for testing the development environment setup.
+ */
 public class SetupTestObject {
 	
 	String first_name;

@@ -17,6 +17,11 @@ import org.springframework.stereotype.Component;
 import acm.objects.SetupTestObject;
 
 
+/**
+ * @author Pranil
+ * @description This is used during testing whether your development environment is correctly setup.
+ *
+ */
 @Component
 public class SetupDatabaseBean {
 

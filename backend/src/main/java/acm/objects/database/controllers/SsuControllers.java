@@ -15,6 +15,11 @@ import acm.objects.SimpleStatusUpdate;
 import acm.objects.SsuPostData;
 import acm.objects.database.SsuDatabaseBean;
 
+/**
+ * @author Pranil
+ * @description REST API Controllers for SSU. See the Wiki for the URLs documentation.
+ *
+ */
 @RestController
 @RequestMapping("/SSU")
 public class SsuControllers {
@@ -22,16 +27,27 @@ public class SsuControllers {
 	@Autowired
 	SsuDatabaseBean SsuDatabaseBean;
 
+	/**
+	 * @return GET - http://localhost:8080/SSU/all | Returns ALL SSU objects
+	 */
 	@RequestMapping(value = "/all", method = RequestMethod.GET)
 	public List<SimpleStatusUpdate> getAllSsu() {
 		return SsuDatabaseBean.getAllSSUs() ;
 	}
 
+	/**
+	 * @param ssuId
+	 * @return GET - http://localhost:8080/SSU/{ssuId} | Returns SSU with the {ssuId} that you pass in
+	 */
 	@RequestMapping(value = "/{ssuId}", method = RequestMethod.GET)
 	public SimpleStatusUpdate getSsuFromId(@PathVariable("ssuId") String ssuId) {
 		return SsuDatabaseBean.getSsuFromId(ssuId) ;
 	}
 	
+	/**
+	 * @param DataToAdd - A SsuPostData object
+	 * @return POST - http://localhost:8080/SSU/SSU | Returns id of the new SSU if successfully inserted | Returns -1 if failed to insert SSU.
+	 */
 	@RequestMapping(value="/SSU", method = RequestMethod.POST)
 	public Map<String, String> AddSsu(@RequestBody SsuPostData DataToAdd) {
 
