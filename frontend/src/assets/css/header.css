@@ -1,0 +1,24 @@
+/* ****************************** HEADER CSS ***********************************/
+@import url('https://fonts.googleapis.com/css?family=Varela+Round:400,500,600');
+
+.top_menu {
+    background: #38011b;
+  }
+  
+.navbar {
+    border-radius: 0px;
+    margin-bottom: 0px;
+    background: transparent;
+    padding: 0px;
+    border: 0px;
+  }
+  
+.navbar_link {
+    font: 550 12px/50px 'Varela Round', sans-serif;
+    text-transform: uppercase;
+    padding: 0px 20px;
+    display: inline-block;
+    color: #fff;
+  }
+  
+  

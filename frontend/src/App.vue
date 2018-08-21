@@ -22,5 +22,8 @@ export default {
 </script>
 
 <style>
-@import './assets/css/main-css-file.css';
+@import './assets/css/generic-classes.css';
+@import './assets/css/header.css';
+@import './assets/css/ssu.css';
+@import './assets/css/footer.css';
 </style>

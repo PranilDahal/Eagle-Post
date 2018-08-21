@@ -4,7 +4,7 @@
 			<div class="post_text_inside">
 
 				<a href="">
-					<h5 class="post-heading">{{ssu.title}}</h5>
+					<h5 class="post_heading golden_link">{{ssu.title}}</h5>
 				</a>
 
 				<p class="post_description">{{ssu.description}}</p>

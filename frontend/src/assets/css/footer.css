@@ -1,0 +1,45 @@
+/* ****************************** FOOTER CSS ********************************** */
+
+@import url('https://fonts.googleapis.com/css?family=Varela+Round:400,500,600');
+
+.footer_part {
+    bottom:0;
+    background: #222222;
+    padding-top: 10px;
+    padding-bottom: 0px;
+    position: fixed;
+    width:100%;
+  }
+  
+  .footer_heading {
+    font-size: 16px;
+    line-height: 23px;
+    font-weight: 550;
+    color: #fff;
+    margin-bottom: 0px;
+  }
+  
+  .social_media_logos {
+    margin-left: 15px;
+  }
+  
+  .social_block a {
+    font-size: 14px;
+    color: #777777;
+    -webkit-transition: all 0.3s linear;
+    -o-transition: all 0.3s linear;
+    transition: all 0.3s linear;
+    margin-right: 5px;
+    margin-bottom: 5px;
+  }
+  
+  .social_block a:hover {
+    color: #cfb316;
+    text-decoration: none;
+  }
+  
+  .logo_bottom_left{
+    float: left;
+    margin-top: 0px;
+    margin-right: 5px;
+  }
