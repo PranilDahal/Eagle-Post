@@ -1,0 +1,43 @@
+/* ******************************GENERIC CSS********************************** */
+
+@import url('https://fonts.googleapis.com/css?family=Varela+Round:400,500,600');
+
+a:hover, a:visited, a:link, a:active
+{
+    text-decoration: none;
+}
+
+body {
+  line-height: 23px;
+  font-size: 14px;
+  font-weight: normal;
+  color: #777777;
+  font-family: "Open Sans", sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Varela Round', sans-serif;
+  font-weight: 530;
+}
+
+.padding_120 {
+  padding-top: 120px;
+  padding-bottom: 120px;
+}
+
+.padding_100 {
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+
+.padadding_top_120 {
+  padding-top: 120px;
+}
+
+.golden_link:hover {
+  color: #f09a0f;
+  -webkit-transition: all 350ms linear 0s;
+  -o-transition: all 350ms linear 0s;
+  transition: all 350ms linear 0s;
+  text-decoration: none;
+}

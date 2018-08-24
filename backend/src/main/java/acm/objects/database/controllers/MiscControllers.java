@@ -9,8 +9,13 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+/**
+ * @author Pranil
+ *
+ * @description Extra controllers.
+ */
 @RestController
-public class MiscControllers<SetupTestObject> {
+public class MiscControllers {
 
 	@Autowired
 	SetupDatabaseBean setupTestBean;

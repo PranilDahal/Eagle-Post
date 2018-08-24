@@ -1,5 +1,11 @@
 package acm.objects;
 
+/**
+ * @author Pranil
+ * @description Use this method while called POST request for a SSU. It contains all the SSU 
+ * 	information in string format.
+ *
+ */
 public class SsuPostData {
 
 	public String title;

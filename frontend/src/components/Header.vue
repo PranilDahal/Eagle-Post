@@ -7,13 +7,15 @@
 
 				<div class="container">
 
-					<a class="navbar-heading heading_logo" href="">
+					<a href="">
 						<img src="./../assets/img/csula-heading.png" alt="Cal State LA" style="width:50px;height:60px;">
 					</a>
 
+					<a class="navbar_link golden_link font-weight-bold" href="index.html">Post</a>
+
 					<ul class="navbar-nav">
 						<li class="navbar-menu-item">
-							<a class="navbar-link golden_link" href="index.html">Home</a>
+							<a class="navbar_link golden_link font-weight-bold" href="index.html">Home</a>
 						</li>
 					</ul>
 

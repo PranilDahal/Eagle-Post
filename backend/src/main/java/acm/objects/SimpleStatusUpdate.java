@@ -2,6 +2,11 @@ package acm.objects;
 
 import java.sql.Date;
 
+/**
+ * @author Pranil
+ * @description SimpleStatusUpdate class
+ *
+ */
 public class SimpleStatusUpdate extends AbstractPost{
 	
 	public String ssuId;
@@ -21,6 +26,10 @@ public class SimpleStatusUpdate extends AbstractPost{
 	}
 
 
+	/**
+	 * @see acm.objects.AbstractPost#uploadToDatabase()
+	 * @description DONT USE THIS METHOD. IT'S NOT FUNCTIONAL YET.
+	 */
 	@Override
 	public boolean uploadToDatabase() {
 		return false;
