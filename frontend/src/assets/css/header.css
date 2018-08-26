@@ -1,5 +1,5 @@
 /* ****************************** HEADER CSS ***********************************/
-@import url('https://fonts.googleapis.com/css?family=Varela+Round:400,500,600');
+@import url('https://fonts.googleapis.com/css?family=Enriqueta:400,400,600');
 
 .top_menu {
     background: #38011b;
@@ -14,11 +14,15 @@
   }
   
 .navbar_link {
-    font: 550 12px/50px 'Varela Round', sans-serif;
+    font: 300 15px/50px 'Enriqueta', serif;
     text-transform: uppercase;
     padding: 0px 20px;
     display: inline-block;
     color: #fff;
   }
+
+.graduation_cap{
+  color: #fff;
+}
   
   

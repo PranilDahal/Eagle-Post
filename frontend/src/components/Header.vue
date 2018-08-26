@@ -8,14 +8,15 @@
 				<div class="container">
 
 					<a href="">
-						<img src="./../assets/img/csula-heading.png" alt="Cal State LA" style="width:50px;height:60px;">
+						<img src="./../assets/img/csula-heading.png" alt="Cal State LA" style="width:45px;height:55px;">
 					</a>
 
-					<a class="navbar_link golden_link font-weight-bold" href="index.html">Post</a>
+					<a class="navbar_link golden_link" href="">Post</a>
 
 					<ul class="navbar-nav">
 						<li class="navbar-menu-item">
-							<a class="navbar_link golden_link font-weight-bold" href="index.html">Home</a>
+							<a class="navbar_link golden_link" href="index.html">Home</a>
+							<a href="" class="fa fa-graduation-cap golden_link graduation_cap"></a>
 						</li>
 					</ul>
 

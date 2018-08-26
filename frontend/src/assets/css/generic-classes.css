@@ -1,6 +1,6 @@
 /* ******************************GENERIC CSS********************************** */
 
-@import url('https://fonts.googleapis.com/css?family=Varela+Round:400,500,600');
+@import url('https://fonts.googleapis.com/css?family=Enriqueta:400,400,600');
 
 a:hover, a:visited, a:link, a:active
 {
@@ -16,8 +16,7 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Varela Round', sans-serif;
-  font-weight: 530;
+  font-family: 'Enriqueta', serif;
 }
 
 .padding_120 {
