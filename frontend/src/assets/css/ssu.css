@@ -1,6 +1,6 @@
 /* ******************************SSU CSS********************************** */
 
-@import url('https://fonts.googleapis.com/css?family=Varela+Round:400,500,600');
+@import url('https://fonts.googleapis.com/css?family=Enriqueta:400,400,600');
 
 .post_style_A {
     margin-bottom: 100px;
@@ -19,7 +19,7 @@
     color: #777777;
     border-radius: 15px;
     font-size: 12px;
-    font-family: 'Varela Round', sans-serif;
+    font-family: 'Enriqueta', serif;
     margin-bottom: 20px;
     font-weight: 500;
     -webkit-box-shadow: 0px 10px 10px 0px rgba(163, 145, 9, 0.1);
@@ -31,7 +31,7 @@
   
   .post_heading {
     font-size: 24px;
-    font-family: 'Varela Round', sans-serif;
+    font-family: 'Enriqueta', serif;
     line-height: 30px;
     color: #222222;
     padding-right: 20px;
@@ -50,7 +50,7 @@
     color: #777777;
     font-size: 13px;
     font-weight: normal;
-    font-family: 'Varela Round', sans-serif;
+    font-family: 'Enriqueta', serif;
     margin-right: 23px;
   }
   
