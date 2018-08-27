@@ -12,8 +12,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import acm.objects.SimpleStatusUpdate;
-import acm.objects.SsuPostData;
 import acm.objects.database.SsuDatabaseBean;
+import acm.objects.datahandlers.SsuPostData;
 
 /**
  * @author Pranil
@@ -32,7 +32,7 @@ public class SsuControllers {
 	 */
 	@RequestMapping(value = "/all", method = RequestMethod.GET)
 	public List<SimpleStatusUpdate> getAllSsu() {
-		return SsuDatabaseBean.getAllSSUs() ;
+		return SsuDatabaseBean.getAllFromDatabase() ;
 	}
 
 	/**
@@ -41,7 +41,7 @@ public class SsuControllers {
 	 */
 	@RequestMapping(value = "/{ssuId}", method = RequestMethod.GET)
 	public SimpleStatusUpdate getSsuFromId(@PathVariable("ssuId") String ssuId) {
-		return SsuDatabaseBean.getSsuFromId(ssuId) ;
+		return SsuDatabaseBean.getById(ssuId);
 	}
 	
 	/**
@@ -51,7 +51,7 @@ public class SsuControllers {
 	@RequestMapping(value="/SSU", method = RequestMethod.POST)
 	public Map<String, String> AddSsu(@RequestBody SsuPostData DataToAdd) {
 
-		int id = SsuDatabaseBean.insertSsu(DataToAdd);
+		String id = SsuDatabaseBean.insertToDatabase(DataToAdd);
 
 		return Collections.singletonMap("id", id+"");
 	}

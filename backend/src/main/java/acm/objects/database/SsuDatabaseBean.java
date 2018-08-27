@@ -18,7 +18,7 @@ import org.springframework.jdbc.core.simple.SimpleJdbcInsert;
 import org.springframework.stereotype.Component;
 
 import acm.objects.SimpleStatusUpdate;
-import acm.objects.SsuPostData;
+import acm.objects.datahandlers.SsuPostData;
 
 /**
  * @author Pranil
@@ -26,7 +26,7 @@ import acm.objects.SsuPostData;
  *
  */
 @Component
-public class SsuDatabaseBean {
+public class SsuDatabaseBean implements IDatabaseBean<SimpleStatusUpdate, SsuPostData>{
 
 	public static final String GET_ALL_SSU = "select * from ssu";
 
@@ -43,53 +43,6 @@ public class SsuDatabaseBean {
 		this.insertSsu = new SimpleJdbcInsert(dataSource).withTableName("ssu").usingGeneratedKeyColumns("ssuId");
 	}
 
-
-	/**
-	 * @return ALL the SSUs that are in the database
-	 */
-	public List<SimpleStatusUpdate> getAllSSUs() {
-
-		List<SimpleStatusUpdate> ssu = this.jdbcTemplate.query(GET_ALL_SSU, new SsuValuesMapper());
-		return ssu;
-
-	}
-
-	/**
-	 * @param ssuId - (String) id of the SSU to retrieve
-	 * @return One SSU object.
-	 */
-	public SimpleStatusUpdate getSsuFromId(String ssuId) {
-		SimpleStatusUpdate ssu = this.jdbcTemplate.queryForObject(GET_SSU_FROM_ID, new Object[] {ssuId}, new SsuValuesMapper());
-		return ssu;
-	}
-
-
-	/**
-	 * @param dataToAdd - SsuPostData object
-	 * @return returns (-1) if failed to insert | returns the ssuId of the SSU if successfully inserted
-	 */
-	public int insertSsu(SsuPostData dataToAdd) {
-		Map<String, Object> parameters = new HashMap<String, Object>();
-
-		try {
-			parameters.put("title", dataToAdd.getTitle());
-			parameters.put("description", dataToAdd.getDescription());
-			SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
-			java.util.Date parsed = format.parse(dataToAdd.getDatePosted());
-			java.sql.Date sql = new java.sql.Date(parsed.getTime());
-			parameters.put("date_posted", sql);
-
-			Number newId= insertSsu.executeAndReturnKey(parameters);
-
-			return newId.intValue();
-		} catch (ParseException e) {
-			System.out.println("ERROR: FAILED TO PARSE STRING TO A SQL DATE TYPE");
-			e.printStackTrace();
-			return -1;
-		}
-
-	}
-
 	private static class SsuValuesMapper implements RowMapper<SimpleStatusUpdate> {
 
 		@Override
@@ -104,6 +57,42 @@ public class SsuDatabaseBean {
 
 		}
 
+	}
+
+	@Override
+	public List<SimpleStatusUpdate> getAllFromDatabase() {
+		List<SimpleStatusUpdate> ssu = this.jdbcTemplate.query(GET_ALL_SSU, new SsuValuesMapper());
+		return ssu;
+	}
+
+
+	@Override
+	public SimpleStatusUpdate getById(String ssuId) {
+		SimpleStatusUpdate ssu = this.jdbcTemplate.queryForObject(GET_SSU_FROM_ID, new Object[] {ssuId}, new SsuValuesMapper());
+		return ssu;
+	}
+
+
+	@Override
+	public String insertToDatabase(SsuPostData dataToAdd) {
+		Map<String, Object> parameters = new HashMap<String, Object>();
+
+		try {
+			parameters.put("title", dataToAdd.getTitle());
+			parameters.put("description", dataToAdd.getDescription());
+			SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
+			java.util.Date parsed = format.parse(dataToAdd.getDatePosted());
+			java.sql.Date sql = new java.sql.Date(parsed.getTime());
+			parameters.put("date_posted", sql);
+
+			Number newId= insertSsu.executeAndReturnKey(parameters);
+
+			return Integer.toString(newId.intValue());
+		} catch (ParseException e) {
+			System.out.println("ERROR: FAILED TO PARSE STRING TO A SQL DATE TYPE");
+			e.printStackTrace();
+			return "-1";
+		}
 	}
 
 }

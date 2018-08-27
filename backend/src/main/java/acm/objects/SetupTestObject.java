@@ -2,7 +2,7 @@ package acm.objects;
 
 
 /**
- * @author dahal
+ * @author Pranil
  *
  *@description This is just a dummy object for testing the development environment setup.
  */

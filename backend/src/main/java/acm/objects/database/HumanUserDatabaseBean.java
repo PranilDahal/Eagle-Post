@@ -1,20 +1,16 @@
 package acm.objects.database;
 
 import java.sql.Date;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.List;
-
 import javax.sql.DataSource;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
-import org.springframework.jdbc.core.RowMapper;
 import org.springframework.jdbc.core.simple.SimpleJdbcInsert;
 import org.springframework.stereotype.Component;
-
 import acm.objects.HumanUser;
-import acm.objects.SetupTestObject;
-import acm.objects.SimpleStatusUpdate;
+import acm.objects.datahandlers.HumanUserPostData;
 
 /**
  * @author Pranil
@@ -22,7 +18,7 @@ import acm.objects.SimpleStatusUpdate;
  *
  */
 @Component
-public class HumanUserDatabaseBean {
+public class HumanUserDatabaseBean implements IDatabaseBean<HumanUser, HumanUserPostData>{
 
 	public static final String GET_ALL_USERS = "select * from users";
 
@@ -38,22 +34,42 @@ public class HumanUserDatabaseBean {
 	}
 
 
-//	public List<HumanUser> getAllUsers() {
-//
-//		List<HumanUser> humans = this.jdbcTemplate.query(GET_ALL_USERS, new UsersMapper());
-//		return humans;
-//
-//	}
+	@Override
+	public List<HumanUser> getAllFromDatabase() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 
-//	private static class UsersMapper implements RowMapper<HumanUser> {
-//
-//		@Override
-//		public HumanUser mapRow(ResultSet rs, int rowNum) throws SQLException {
-//			
-//			return new HumanUser(null);
-//
-//		}
-//
-//	}
+
+	@Override
+	public HumanUser getById(String id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+
+	@Override
+	public String insertToDatabase(HumanUserPostData postData) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+
+	public HumanUser getByUsername(String username) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+
+	public boolean existsByUsername(String username) {
+		// TODO Auto-generated method stub
+		return true;
+	}
+
+
+	public boolean existsByEmail(String email) {
+		// TODO Auto-generated method stub
+		return true;
+	}
 
 }
