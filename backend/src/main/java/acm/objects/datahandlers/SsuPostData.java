@@ -1,8 +1,8 @@
-package acm.objects;
+package acm.objects.datahandlers;
 
 /**
  * @author Pranil
- * @description Use this method while called POST request for a SSU. It contains all the SSU 
+ * @description Use this object while called POST request for a SSU. It contains all the SSU 
  * 	information in string format.
  *
  */
@@ -28,11 +28,9 @@ public class SsuPostData {
 	}
 
 
-
 	public void setTitle(String title) {
 		this.title = title;
 	}
-
 
 
 	public String getDescription() {
@@ -50,7 +48,6 @@ public class SsuPostData {
 	public String getDatePosted() {
 		return date_posted;
 	}
-
 
 
 	public void setDatePosted(String datePosted) {

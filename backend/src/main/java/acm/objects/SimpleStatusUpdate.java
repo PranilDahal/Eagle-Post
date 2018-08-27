@@ -7,7 +7,7 @@ import java.sql.Date;
  * @description SimpleStatusUpdate class
  *
  */
-public class SimpleStatusUpdate extends AbstractPost{
+public class SimpleStatusUpdate{
 	
 	public String ssuId;
 
@@ -23,16 +23,6 @@ public class SimpleStatusUpdate extends AbstractPost{
 		this.title = title;
 		this.description = description;
 		this.datePosted = datePosted;
-	}
-
-
-	/**
-	 * @see acm.objects.AbstractPost#uploadToDatabase()
-	 * @description DONT USE THIS METHOD. IT'S NOT FUNCTIONAL YET.
-	 */
-	@Override
-	public boolean uploadToDatabase() {
-		return false;
 	}
 
 	public String getTitle() {
@@ -62,7 +52,6 @@ public class SimpleStatusUpdate extends AbstractPost{
 	public Date getDatePosted() {
 		return datePosted;
 	}
-
 
 
 	public void setDatePosted(Date datePosted) {
