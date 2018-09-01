@@ -8,13 +8,13 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import acm.objects.HumanUser;
-import acm.objects.database.HumanUserDatabaseBean;
+import acm.objects.database.HumanUserFactory;
 
 @Service
 public class UserInfoService implements UserDetailsService{
 
 	@Autowired
-	HumanUserDatabaseBean userRepository;
+	HumanUserFactory userRepository;
 
 	@Override
 	@Transactional

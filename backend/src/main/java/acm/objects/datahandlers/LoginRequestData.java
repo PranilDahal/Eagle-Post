@@ -4,10 +4,8 @@ import javax.validation.constraints.NotBlank;
 
 public class LoginRequestData {
 	
-    @NotBlank
     private String usernameOrEmail;
 
-    @NotBlank
     private String password;
 
     public String getUsernameOrEmail() {

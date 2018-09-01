@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import acm.objects.SimpleStatusUpdate;
-import acm.objects.database.SsuDatabaseBean;
+import acm.objects.database.SsuFactory;
 import acm.objects.datahandlers.SsuPostData;
 
 /**
@@ -25,7 +25,7 @@ import acm.objects.datahandlers.SsuPostData;
 public class SsuControllers {
 
 	@Autowired
-	SsuDatabaseBean SsuDatabaseBean;
+	SsuFactory SsuDatabaseBean;
 
 	/**
 	 * @return GET - http://localhost:8080/SSU/all | Returns ALL SSU objects

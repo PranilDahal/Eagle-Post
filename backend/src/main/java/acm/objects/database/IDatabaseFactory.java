@@ -8,7 +8,7 @@ import java.util.List;
  * @param <T> The actual object
  * @param <S> Post data object
  */
-public interface IDatabaseBean<T, S> {
+public interface IDatabaseFactory<T, S> {
 	
 	/**
 	 * @return List<T> of all the T objects in database
