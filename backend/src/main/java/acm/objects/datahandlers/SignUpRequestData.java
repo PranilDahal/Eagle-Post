@@ -7,41 +7,38 @@ import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
 
 public class SignUpRequestData {
-	@NotBlank
-	@Size(min = 2, max = 15)
+
 	private String firstName;
 
-	@NotBlank
-	@Size(min = 2, max = 15)
 	private String lastName;
 	
-	@NotBlank
-	@Size(min = 7, max = 30)
 	private String userName;
 
-	@NotBlank
-	@Size(min = 7, max = 20)
 	private String password;
 	
-	@NotBlank
-	@Size(min = 8, max = 10)
 	private String CIN;
 	
-	@NotBlank
-	@Size(min = 10, max = 20)
 	private String phoneNumber;
 	
-	@NotBlank
-	@Size(max = 40)
-	@Email
 	private String emailAddress;
 
-	@NotBlank
 	private String birthDay;
 	
-	@NotBlank
-	@Size(min = 10, max = 40)
 	private String secretCode;
+	
+	public SignUpRequestData(String firstName, String lastName, String userName, String password, String cIN,
+			String phoneNumber, String emailAddress, String birthDay, String secretCode) {
+		super();
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.userName = userName;
+		this.password = password;
+		CIN = cIN;
+		this.phoneNumber = phoneNumber;
+		this.emailAddress = emailAddress;
+		this.birthDay = birthDay;
+		this.secretCode = secretCode;
+	}
 
 	public String getFirstName() {
 		return firstName;

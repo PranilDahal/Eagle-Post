@@ -9,20 +9,20 @@ import java.sql.Date;
  */
 public class SimpleStatusUpdate{
 	
-	public String ssuId;
+	public String ssuid;
 
 	public String title;
 
 	public String description;
 
-	public Date datePosted;
+	public Date dateposted;
 
 	public SimpleStatusUpdate(String id, String title, String description, Date datePosted) {
 		super();
-		this.ssuId = id;
+		this.ssuid = id;
 		this.title = title;
 		this.description = description;
-		this.datePosted = datePosted;
+		this.dateposted = datePosted;
 	}
 
 	public String getTitle() {
@@ -48,24 +48,23 @@ public class SimpleStatusUpdate{
 	}
 
 
-
 	public Date getDatePosted() {
-		return datePosted;
+		return dateposted;
 	}
 
 
 	public void setDatePosted(Date datePosted) {
-		this.datePosted = datePosted;
+		this.dateposted = datePosted;
 	}
 
 
 	public String getId() {
-		return ssuId;
+		return ssuid;
 	}
 
 
 	public void setId(String id) {
-		this.ssuId = id;
+		this.ssuid = id;
 	}
 
 }

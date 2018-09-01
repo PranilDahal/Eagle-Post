@@ -1,5 +1,6 @@
 package acm.objects.datahandlers;
 
+
 /**
  * @author Pranil
  * @description Use this object while called POST request for a SSU. It contains all the SSU 
@@ -7,20 +8,18 @@ package acm.objects.datahandlers;
  *
  */
 public class SsuPostData {
-
+	
 	public String title;
-
+	
 	public String description;
 
-	public String date_posted;
-
-	public SsuPostData() {}
+	public String dateposted;
 	
 	public SsuPostData(String title, String description, String datePosted) {
 		super();
 		this.title = title;
 		this.description = description;
-		this.date_posted = datePosted;
+		this.dateposted = datePosted;
 	}
 
 	public String getTitle() {
@@ -46,12 +45,12 @@ public class SsuPostData {
 
 
 	public String getDatePosted() {
-		return date_posted;
+		return dateposted;
 	}
 
 
 	public void setDatePosted(String datePosted) {
-		this.date_posted = datePosted;
+		this.dateposted = datePosted;
 	}
 
 }

@@ -18,7 +18,7 @@ import acm.objects.datahandlers.HumanUserPostData;
  *
  */
 @Component
-public class HumanUserDatabaseBean implements IDatabaseBean<HumanUser, HumanUserPostData>{
+public class HumanUserFactory implements IDatabaseFactory<HumanUser, HumanUserPostData>{
 
 	public static final String GET_ALL_USERS = "select * from users";
 

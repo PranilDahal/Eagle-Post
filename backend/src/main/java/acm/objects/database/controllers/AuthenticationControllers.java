@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
-import acm.objects.database.HumanUserDatabaseBean;
+import acm.objects.database.HumanUserFactory;
 import acm.objects.datahandlers.ApiResponseData;
 import acm.objects.datahandlers.HumanUserPostData;
 import acm.objects.datahandlers.JwtAuthenticationResponse;
@@ -34,7 +34,7 @@ public class AuthenticationControllers {
 	AuthenticationManager authenticationManager;
 
 	@Autowired
-	HumanUserDatabaseBean userRepository;
+	HumanUserFactory userRepository;
 
 	@Autowired
 	PasswordEncoder passwordEncoder;

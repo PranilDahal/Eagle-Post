@@ -26,7 +26,7 @@ import acm.objects.datahandlers.SsuPostData;
  *
  */
 @Component
-public class SsuDatabaseBean implements IDatabaseBean<SimpleStatusUpdate, SsuPostData>{
+public class SsuFactory implements IDatabaseFactory<SimpleStatusUpdate, SsuPostData>{
 
 	public static final String GET_ALL_SSU = "select * from ssu";
 
@@ -48,10 +48,10 @@ public class SsuDatabaseBean implements IDatabaseBean<SimpleStatusUpdate, SsuPos
 		@Override
 		public SimpleStatusUpdate mapRow(ResultSet rs, int rowNum) throws SQLException {
 
-			String id = rs.getString("ssuId");
+			String id = rs.getString("ssuid");
 			String title = rs.getString("title");
 			String desc = rs.getString("description");
-			Date postDate = rs.getDate("date_posted");
+			Date postDate = rs.getDate("dateposted");
 
 			return new SimpleStatusUpdate(id, title,desc,postDate);
 
@@ -83,7 +83,7 @@ public class SsuDatabaseBean implements IDatabaseBean<SimpleStatusUpdate, SsuPos
 			SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
 			java.util.Date parsed = format.parse(dataToAdd.getDatePosted());
 			java.sql.Date sql = new java.sql.Date(parsed.getTime());
-			parameters.put("date_posted", sql);
+			parameters.put("dateposted", sql);
 
 			Number newId= insertSsu.executeAndReturnKey(parameters);
 
