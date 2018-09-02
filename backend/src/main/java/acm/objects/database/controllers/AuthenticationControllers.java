@@ -22,8 +22,8 @@ import acm.objects.database.HumanUserFactory;
 import acm.objects.datahandlers.ApiResponseData;
 import acm.objects.datahandlers.HumanUserPostData;
 import acm.objects.datahandlers.JwtAuthenticationResponse;
-import acm.objects.datahandlers.LoginRequestData;
-import acm.objects.datahandlers.SignUpRequestData;
+import acm.objects.datahandlers.HumanLoginRequestData;
+import acm.objects.datahandlers.HumanSignUpRequestData;
 import acm.security.TokenProvider;
 
 @RestController
@@ -42,8 +42,8 @@ public class AuthenticationControllers {
 	@Autowired
 	TokenProvider tokenProvider;
 
-	@PostMapping("/signin")
-	public ResponseEntity<?> authenticateUser(@Valid @RequestBody LoginRequestData loginRequest) {
+	@PostMapping("/humansignin")
+	public ResponseEntity<?> authenticateUser(@Valid @RequestBody HumanLoginRequestData loginRequest) {
 
 		Authentication authentication = authenticationManager.authenticate(
 				new UsernamePasswordAuthenticationToken(
@@ -58,8 +58,8 @@ public class AuthenticationControllers {
 		return ResponseEntity.ok(new JwtAuthenticationResponse(jwt));
 	}
 
-	@PostMapping("/signup")
-	public ResponseEntity<?> registerUser(@Valid @RequestBody SignUpRequestData signUpRequestData) {
+	@PostMapping("/humansignup")
+	public ResponseEntity<?> registerUser(@Valid @RequestBody HumanSignUpRequestData signUpRequestData) {
 		if(userRepository.existsByUsername(signUpRequestData.getUserName())) {
 			return new ResponseEntity(new ApiResponseData(false, "Username is already taken!"),
 					HttpStatus.BAD_REQUEST);
@@ -71,7 +71,7 @@ public class AuthenticationControllers {
 		}
 
 		// Create a post data object
-		SignUpRequestData obj = signUpRequestData;
+		HumanSignUpRequestData obj = signUpRequestData;
 		HumanUserPostData user = new HumanUserPostData(
 				obj.getFirstName(), obj.getLastName(), obj.getUserName(), obj.getPassword(), obj.getCIN(),
 				obj.getPhoneNumber(), obj.getEmailAddress(), obj.getBirthDay(), obj.getSecretCode());

@@ -2,101 +2,101 @@ package acm.objects.datahandlers;
 
 public class HumanUserPostData {
 
-	public String firstName;
+	public String firstname;
 	
-	public String lastName;
+	public String lastname;
 	
-	public String userName;
+	public String username;
 	
 	public String password;
 	
-	public String CIN;
+	public String cin;
 	
-	public String phoneNumber;
+	public String phonenumber;
 	
-	public String emailAddress;
+	public String emailaddress;
 	
-	public String birthDay;
+	public String birthday;
 	
-	public String secretCode;
+	public String secretcode;
 
 	public HumanUserPostData(String firstName, String lastName, String userName, String password, String cin,
 			String phoneNumber, String emailAddress, String birthDay, String secretCode) {
 		super();
 
-		this.firstName = firstName;
-		this.lastName = lastName;
-		this.userName = userName;
+		this.firstname = firstName;
+		this.lastname = lastName;
+		this.username = userName;
 		this.password = password;
-		this.CIN = cin;
-		this.phoneNumber = phoneNumber;
-		this.emailAddress = emailAddress;
-		this.birthDay = birthDay;
-		this.secretCode = secretCode;
+		this.cin = cin;
+		this.phonenumber = phoneNumber;
+		this.emailaddress = emailAddress;
+		this.birthday = birthDay;
+		this.secretcode = secretCode;
 	}
 
 	public String getFirstName() {
-		return firstName;
+		return firstname;
 	}
 
 	public void setFirstName(String firstName) {
-		this.firstName = firstName;
+		this.firstname = firstName;
 	}
 
 	public String getLastName() {
-		return lastName;
+		return lastname;
 	}
 
 	public void setLastName(String lastName) {
-		this.lastName = lastName;
+		this.lastname = lastName;
 	}
 
 	public String getCIN() {
-		return CIN;
+		return cin;
 	}
 
 	public void setCIN(String cIN) {
-		CIN = cIN;
+		cin = cIN;
 	}
 
 	public String getPhoneNumber() {
-		return phoneNumber;
+		return phonenumber;
 	}
 
 	public void setPhoneNumber(String phoneNumber) {
-		this.phoneNumber = phoneNumber;
+		this.phonenumber = phoneNumber;
 	}
 
 	public String getEmailAddress() {
-		return emailAddress;
+		return emailaddress;
 	}
 
 	public void setEmailAddress(String emailAddress) {
-		this.emailAddress = emailAddress;
+		this.emailaddress = emailAddress;
 	}
 
 	public String getBirthDay() {
-		return birthDay;
+		return birthday;
 	}
 
 	public void setBirthDay(String birthDay) {
-		this.birthDay = birthDay;
+		this.birthday = birthDay;
 	}
 
 	public String getSecretCode() {
-		return secretCode;
+		return secretcode;
 	}
 
 	public void setSecretCode(String secretCode) {
-		this.secretCode = secretCode;
+		this.secretcode = secretCode;
 	}
 
 	public String getUserName() {
-		return userName;
+		return username;
 	}
 
 	public void setUserName(String userName) {
-		this.userName = userName;
+		this.username = userName;
 	}
 
 	public String getPassword() {

@@ -2,7 +2,7 @@ package acm.objects.datahandlers;
 
 import javax.validation.constraints.NotBlank;
 
-public class LoginRequestData {
+public class HumanLoginRequestData {
 	
     private String usernameOrEmail;
 

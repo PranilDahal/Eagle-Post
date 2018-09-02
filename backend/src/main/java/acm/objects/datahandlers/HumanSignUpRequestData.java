@@ -6,7 +6,7 @@ import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
 
-public class SignUpRequestData {
+public class HumanSignUpRequestData {
 
 	private String firstName;
 
@@ -26,7 +26,7 @@ public class SignUpRequestData {
 	
 	private String secretCode;
 	
-	public SignUpRequestData(String firstName, String lastName, String userName, String password, String cIN,
+	public HumanSignUpRequestData(String firstName, String lastName, String userName, String password, String cIN,
 			String phoneNumber, String emailAddress, String birthDay, String secretCode) {
 		super();
 		this.firstName = firstName;

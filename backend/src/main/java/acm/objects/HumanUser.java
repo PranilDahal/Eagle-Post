@@ -14,111 +14,111 @@ import org.springframework.security.core.userdetails.UserDetails;
  */
 public class HumanUser implements UserDetails{
 	
-	public int userId;
+	public int userid;
 
-	public String firstName;
+	public String firstname;
 	
-	public String lastName;
+	public String lastname;
 	
-	public String userName;
+	public String username;
 	
 	public String password;
 	
-	public String CIN;
+	public String cin;
 	
-	public String phoneNumber;
+	public String phonenumber;
 	
-	public String emailAddress;
+	public String emailaddress;
 	
-	public Date birthDay;
+	public Date birthday;
 	
-	public String secretCode;
+	public String secretcode;
 
 	public HumanUser(int userId, String firstName, String lastName, String userName, String password, String cin,
 			String phoneNumber, String emailAddress, Date birthDay, String secretCode) {
 		super();
-		this.userId = userId;
-		this.firstName = firstName;
-		this.lastName = lastName;
-		this.userName = userName;
+		this.userid = userId;
+		this.firstname = firstName;
+		this.lastname = lastName;
+		this.username = userName;
 		this.password = password;
-		this.CIN = cin;
-		this.phoneNumber = phoneNumber;
-		this.emailAddress = emailAddress;
-		this.birthDay = birthDay;
-		this.secretCode = secretCode;
+		this.cin = cin;
+		this.phonenumber = phoneNumber;
+		this.emailaddress = emailAddress;
+		this.birthday = birthDay;
+		this.secretcode = secretCode;
 	}
 
 	public String getFirstName() {
-		return firstName;
+		return firstname;
 	}
 
 	public void setFirstName(String firstName) {
-		this.firstName = firstName;
+		this.firstname = firstName;
 	}
 
 	public String getLastName() {
-		return lastName;
+		return lastname;
 	}
 
 	public void setLastName(String lastName) {
-		this.lastName = lastName;
+		this.lastname = lastName;
 	}
 
 	public String getCIN() {
-		return CIN;
+		return cin;
 	}
 
 	public void setCIN(String cIN) {
-		CIN = cIN;
+		cin = cIN;
 	}
 
 	public String getPhoneNumber() {
-		return phoneNumber;
+		return phonenumber;
 	}
 
 	public void setPhoneNumber(String phoneNumber) {
-		this.phoneNumber = phoneNumber;
+		this.phonenumber = phoneNumber;
 	}
 
 	public String getEmailAddress() {
-		return emailAddress;
+		return emailaddress;
 	}
 
 	public void setEmailAddress(String emailAddress) {
-		this.emailAddress = emailAddress;
+		this.emailaddress = emailAddress;
 	}
 
 	public Date getBirthDay() {
-		return birthDay;
+		return birthday;
 	}
 
 	public void setBirthDay(Date birthDay) {
-		this.birthDay = birthDay;
+		this.birthday = birthDay;
 	}
 
 	public String getSecretCode() {
-		return secretCode;
+		return secretcode;
 	}
 
 	public void setSecretCode(String secretCode) {
-		this.secretCode = secretCode;
+		this.secretcode = secretCode;
 	}
 
 	public int getUserId() {
-		return userId;
+		return userid;
 	}
 
 	public void setUserId(int userId) {
-		this.userId = userId;
+		this.userid = userId;
 	}
 
 	public String getUserName() {
-		return userName;
+		return username;
 	}
 
 	public void setUserName(String userName) {
-		this.userName = userName;
+		this.username = userName;
 	}
 
 	public String getPassword() {
