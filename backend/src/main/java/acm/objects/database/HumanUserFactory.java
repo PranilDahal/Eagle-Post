@@ -55,18 +55,30 @@ public class HumanUserFactory implements IDatabaseFactory<HumanUser, HumanUserPo
 	}
 
 
+	/**
+	 * @param username
+	 * @return a HumanUser object with the specific username
+	 */
 	public HumanUser getByUsername(String username) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 
+	/**
+	 * @param username
+	 * @return true/false depending on whether there exists a human account with that username
+	 */
 	public boolean existsByUsername(String username) {
 		// TODO Auto-generated method stub
 		return true;
 	}
 
 
+	/**
+	 * @param email
+	 * @return true/false based on whether there exists a human account with that email
+	 */
 	public boolean existsByEmail(String email) {
 		// TODO Auto-generated method stub
 		return true;
