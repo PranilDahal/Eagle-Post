@@ -1,2 +1,0 @@
-backend   mvnw	    pom.xml	  README.md	    test1.txt
-frontend  mvnw.cmd  practise-git  Setup\ Resources
