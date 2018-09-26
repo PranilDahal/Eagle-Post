@@ -4,4 +4,4 @@
 /.settings/
 /src/main/resources/static/
 /src/main/resources/application.properties
-/src/target/classes/application.properties
+/target/classes/application.properties
