@@ -2,7 +2,7 @@
 
 @import url('https://fonts.googleapis.com/css?family=Enriqueta:400,400,600');
 
-.post_style_A {
+ .post_style_A {
     margin-bottom: 100px;
     margin-top: 40px;
   }
@@ -53,4 +53,7 @@
     font-family: 'Enriqueta', serif;
     margin-right: 23px;
   }
-  
+
+  .main_ssu_block {
+
+  }
