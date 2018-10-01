@@ -55,5 +55,11 @@ public class SsuControllers {
 
 		return Collections.singletonMap("id", id+"");
 	}
+	
+	public int deleteById(String ssuId) {
+
+        // CODE HERE
+	return 0;
+	}
 
 }
