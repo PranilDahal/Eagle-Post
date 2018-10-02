@@ -9,6 +9,9 @@ package acm.objects.datahandlers;
  */
 public class SsuPostData {
 	
+	// TODO Issue #30 - Update this class to include userid (as String)
+	// TODO Issue #29 - DON'T add the number of likes to this class. New SSUs will have 0 likes by default. (See commend on SsuFactory)
+	
 	public String title;
 	
 	public String description;
