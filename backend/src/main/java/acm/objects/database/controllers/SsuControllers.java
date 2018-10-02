@@ -25,14 +25,14 @@ import acm.objects.datahandlers.SsuPostData;
 public class SsuControllers {
 
 	@Autowired
-	SsuFactory SsuDatabaseBean;
+	SsuFactory SsuFactory;
 
 	/**
 	 * @return GET - http://localhost:8080/SSU/all | Returns ALL SSU objects
 	 */
 	@RequestMapping(value = "/all", method = RequestMethod.GET)
 	public List<SimpleStatusUpdate> getAllSsu() {
-		return SsuDatabaseBean.getAllFromDatabase() ;
+		return SsuFactory.getAllFromDatabase() ;
 	}
 
 	/**
@@ -41,7 +41,7 @@ public class SsuControllers {
 	 */
 	@RequestMapping(value = "/{ssuId}", method = RequestMethod.GET)
 	public SimpleStatusUpdate getSsuFromId(@PathVariable("ssuId") String ssuId) {
-		return SsuDatabaseBean.getById(ssuId);
+		return SsuFactory.getById(ssuId);
 	}
 
 	/**
@@ -51,7 +51,7 @@ public class SsuControllers {
 	@RequestMapping(value="/SSU", method = RequestMethod.POST)
 	public Map<String, String> AddSsu(@RequestBody SsuPostData DataToAdd) {
 
-		String id = SsuDatabaseBean.insertToDatabase(DataToAdd);
+		String id = SsuFactory.insertToDatabase(DataToAdd);
 
 		return Collections.singletonMap("id", id+"");
 	}
@@ -63,7 +63,7 @@ public class SsuControllers {
 	 */
 	@RequestMapping(value="/byuser/{userid}", method = RequestMethod.GET)
 	public List<SimpleStatusUpdate> getSsuPostedByAUser(@PathVariable("userid") String userid) {
-		// TODO Issue #31
+		// TODO Issue #31 (Don't forget to document this API on the wiki)
 
 		// The parameter that this method receives is the userid that we wan't to query for in the database.
 		// Look at the other @RequestMapping methods in this file, and understand the way SsuFactory.java is being used.
@@ -82,7 +82,7 @@ public class SsuControllers {
 	 */
 	@RequestMapping(value="/{ssuid}", method = RequestMethod.DELETE)
 	public int deleteById(@PathVariable("ssuid") String ssuid) {
-		// TODO Issue #16
+		// TODO Issue #16 (Don't forget to document this API on the wiki)
 
 		// this method should call deleteById(String ssuId) inside SsuFactory and return the result.
 		return -1;
@@ -95,7 +95,7 @@ public class SsuControllers {
 	 */
 	@RequestMapping(value="/{ssuid}", method = RequestMethod.PUT)
 	public SimpleStatusUpdate updateById(@PathVariable("ssuid") String ssuid, @RequestBody SsuPostData dataToUpdate) {
-		// TODO Issue #17
+		// TODO Issue #17 (Don't forget to document this API on the wiki)
 		
 		// When frontend calls this URL, it sends a SSU object which gets mapped to the SsuPostData object
 		// this method should call updateById(String ssuId, SsuPostData dataToUpdate) inside SsuFactory.java

@@ -51,10 +51,13 @@ public class HumanUserFactory implements IDatabaseFactory<HumanUser, HumanUserPo
 
 			String id = rs.getString("put the column name for the user id");
 			String firstName = rs.getString("put the column name for the first name of users");
-
 			// and so on ... 
-
-			//	return new HumanUser(blah, blah, blah ...)
+			
+			// To find the exact column names, look at https://github.com/PranilDahal/SocialMediaApp/issues/11
+			// The setup script doesn't have the table yet. Issue #7 created the sql table.
+			
+			// And then, use all the data that you collect to create a HumanUser object.
+			//	return new HumanUser(id, firstName, blah ...)
 			return null;
 
 		}
@@ -63,8 +66,8 @@ public class HumanUserFactory implements IDatabaseFactory<HumanUser, HumanUserPo
 
 	// TODO Issue #18 and #15 - 
 	// ***** For all the methods below, you will need to create SQL statements.*****
-	
 	// Look at the top of SsuFactory.java for example.
+	
 	@Override
 	public List<HumanUser> getAllFromDatabase() {
 		// TODO Issue #18 and #15 - Returns ALL the users from database
