@@ -9,6 +9,8 @@ import java.sql.Date;
  */
 public class SimpleStatusUpdate{
 	
+	// TODO Issue #30 - Add a field for user id (String) - Create Getters/Setters - Update constructors
+	// TODO Issue #29 - Add a field for number of likes (int) - Create Getters/Setters - Update constructors
 	public String ssuid;
 
 	public String title;
