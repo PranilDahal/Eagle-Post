@@ -102,12 +102,15 @@ public class HumanUserFactory implements IDatabaseFactory<HumanUser, HumanUserPo
 		try {
 			// TODO Issue #18 and #15 - Inserts a new user into the database
 
-			parameters.put("title", postData.getTitle());
-			parameters.put("description", postData.getDescription());
-			SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
-			java.util.Date parsed = format.parse(dataToAdd.getDatePosted());
-			java.sql.Date sql = new java.sql.Date(parsed.getTime());
-			parameters.put("dateposted", sql);
+			parameters.put("firstname", postData.getFirstName());
+			parameters.put("lastname", postData.getLastName());
+			parameters.put("username", postData.getUserName());
+			parameters.put("password", postData.getPassword());
+			parameters.put("cin", postData.getCIN());
+			parameters.put("phonenumber", postData.getPhoneNumber());
+			parameters.put("emailaddress", postData.getEmailAddress());
+			parameters.put("birthday", postData.getBirthDay());
+			parameters.put("secretcode", postData.getSecretCode());
 
 			Number newId= insertHumanUser.executeAndReturnKey(parameters);
 
