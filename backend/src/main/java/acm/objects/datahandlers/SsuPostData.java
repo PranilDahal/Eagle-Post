@@ -9,7 +9,8 @@ package acm.objects.datahandlers;
  */
 public class SsuPostData {
 	
-	// TODO Issue #30 - Update this class to include userid (as String)
+	public String userid;
+	
 	// TODO Issue #29 - DON'T add the number of likes to this class. New SSUs will have 0 likes by default. (See commend on SsuFactory)
 	
 	public String title;
@@ -18,8 +19,9 @@ public class SsuPostData {
 
 	public String dateposted;
 	
-	public SsuPostData(String title, String description, String datePosted) {
+	public SsuPostData(String userid, String title, String description, String datePosted) {
 		super();
+		this.userid = userid;
 		this.title = title;
 		this.description = description;
 		this.dateposted = datePosted;
@@ -55,5 +57,15 @@ public class SsuPostData {
 	public void setDatePosted(String datePosted) {
 		this.dateposted = datePosted;
 	}
+
+	public String getUserid() {
+		return userid;
+	}
+
+	public void setUserid(String userid) {
+		this.userid = userid;
+	}
+	
+	
 
 }
