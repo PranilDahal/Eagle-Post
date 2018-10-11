@@ -138,11 +138,13 @@ public class HumanUserFactory implements IDatabaseFactory<HumanUser, HumanUserPo
 	 * @return true/false depending on whether there exists a human account with that username
 	 */
 	public boolean existsByUsername(String username) {
-		HumanUser user = this.jdbcTemplate.queryForObject(GET_USER_FROM_USERNAME, new Object[] {username}, new HumanUsersRowMapper());
-		if(user==null){
+		try{
+			HumanUser user = this.jdbcTemplate.queryForObject(GET_USER_FROM_USERNAME, new Object[] {username}, new HumanUsersRowMapper());
+			return true;
+		}
+		catch(EmptyResultDataAccessException e) {
 			return false;
 		}
-		return true;
 	}
 
 
@@ -151,11 +153,13 @@ public class HumanUserFactory implements IDatabaseFactory<HumanUser, HumanUserPo
 	 * @return true/false based on whether there exists a human account with that email
 	 */
 	public boolean existsByEmail(String email) {
-		HumanUser user = this.jdbcTemplate.queryForObject(GET_USER_FROM_EMAIL, new Object[] {emailaddress}, new HumanUsersRowMapper());
-		if(user==null){
+		try {
+			HumanUser user = this.jdbcTemplate.queryForObject(GET_USER_FROM_EMAIL, new Object[]{emailaddress}, new HumanUsersRowMapper());
+			return true;
+		}
+		catch(EmptyResultDataAccessException e) {
 			return false;
 		}
-		return true;
 	}
 
 }
