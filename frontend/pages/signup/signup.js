@@ -1,4 +1,4 @@
-//Singup page javascript goes here
+//username must be at least 10 characters long
 function checkUserName(username) {
 	if (username.length() == 10) {
 		return true;
@@ -11,29 +11,41 @@ function checkUserName(username) {
 function checkPassword() {
 	
 }
-
+//CIN must be 10 digits long
 function checkCIN(CIN) {
 	if (CIN.length == 10) {
 		return CIN;
 	}
+	//If CIN is not entered, set it to 0000000000
 	else if (CIN.length == 0) {
-		CIN = 0000000000
-		return CIN;
+	CIN = "0000000000";
+	return CIN;
+	}
+	else {
+		return "Not valid";
 	}
 }
-
-function checkFirstName() {
-	
+//first name must have no numbers
+function checkFirstName(firstname) {
+	var onlyLetters = /^[a-zA-Z]+$/;
+	return onlyLetters.test(firstname);
+}
+//last name must have no numbers
+function checkLastName(lastname) {
+	var onlyLetters = /^[a-zA-Z]+$/;
+	return onlyLetters.test(lastname);
+}
+//phone number must be in 888-888-8888 format
+function checkPhoneNumber(phonenumber) {
+	var phonenumberFormat = /\d{3}-\d{3}-\d{4}/;
+	return phonenumberFormat.test(phonenumber);
+}
+//birthday must be yyyy-mm-dd format
+function checkBirthday(birthday) {
+	var birthdayFormat = /\d{4}-\d{2}-\d{2}$/;
+	return birthdayFormat.test(birthday);
 }
 
-function checkLastName() {
+function signUp() {
 	
-}
-
-function checkPhoneNumber() {
-	
-}
-
-function checkBirthday() {
-
 }
