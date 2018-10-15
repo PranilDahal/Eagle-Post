@@ -5,7 +5,11 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+
 import javax.sql.DataSource;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -15,6 +19,7 @@ import org.springframework.stereotype.Component;
 import acm.objects.HumanUser;
 import acm.objects.SimpleStatusUpdate;
 import acm.objects.datahandlers.HumanUserPostData;
+import org.springframework.dao.EmptyResultDataAccessException;
 
 /**
  * @author Pranil
@@ -54,7 +59,8 @@ public class HumanUserFactory implements IDatabaseFactory<HumanUser, HumanUserPo
 			// TODO Issue #18 and #15 - The purpose of this class is to create a HumanUser object based on each SQL row
 			// Look at the SsuFactory's RowMapper class for example
 
-			int id = Integer.parseInt(rs.getString("userid"));
+			int id = ((Number) rs.getObject("userid")).intValue();
+			//String id = rs.getString("userid");
 			String firstName = rs.getString("firstname");
 			String lastName = rs.getString("lastname");
 			String userName = rs.getString("username");
@@ -62,7 +68,7 @@ public class HumanUserFactory implements IDatabaseFactory<HumanUser, HumanUserPo
 			String cin = rs.getString("cin");
 			String phoneNumber = rs.getString("phonenumber");
 			String emailAddress = rs.getString("emailaddress");
-			String birthday = rs.getString("birthday");
+			Date birthday = rs.getDate("birthday");
 			String secretCode = rs.getString("secretcode");
 
 
@@ -90,7 +96,7 @@ public class HumanUserFactory implements IDatabaseFactory<HumanUser, HumanUserPo
 
 	@Override
 	public HumanUser getById(String id) {
-		HumanUser user = this.jdbcTemplate.queryForObject(GET_USER_FROM_ID, new Object[] {userid}, new HumanUsersRowMapper());
+		HumanUser user = this.jdbcTemplate.queryForObject(GET_USER_FROM_ID, new Object[] {id}, new HumanUsersRowMapper());
 		return user;
 	}
 
@@ -109,6 +115,12 @@ public class HumanUserFactory implements IDatabaseFactory<HumanUser, HumanUserPo
 			parameters.put("cin", postData.getCIN());
 			parameters.put("phonenumber", postData.getPhoneNumber());
 			parameters.put("emailaddress", postData.getEmailAddress());
+
+			SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
+			java.util.Date parsed = format.parse(postData.getBirthDay());
+			java.sql.Date sql = new java.sql.Date(parsed.getTime());
+
+
 			parameters.put("birthday", postData.getBirthDay());
 			parameters.put("secretcode", postData.getSecretCode());
 
@@ -154,7 +166,7 @@ public class HumanUserFactory implements IDatabaseFactory<HumanUser, HumanUserPo
 	 */
 	public boolean existsByEmail(String email) {
 		try {
-			HumanUser user = this.jdbcTemplate.queryForObject(GET_USER_FROM_EMAIL, new Object[]{emailaddress}, new HumanUsersRowMapper());
+			HumanUser user = this.jdbcTemplate.queryForObject(GET_USER_FROM_EMAIL, new Object[]{email}, new HumanUsersRowMapper());
 			return true;
 		}
 		catch(EmptyResultDataAccessException e) {
