@@ -7,9 +7,16 @@ function checkUserName(username) {
 		return false;
 	}
 }
-
-function checkPassword() {
-	
+//Password must be typed twice and must match
+function checkPassword(password, retypePassword) {
+	var hasNumber = /\d/;
+	var hasSpecialCharacter = /\W/;
+	//Password must contain at least one number and one special character
+	if (password === retypePassword && hasNumber.test(password) 
+		   && hasSpecialCharacter.test(password)) {
+		return true;
+		}
+	return false;	
 }
 //CIN must be 10 digits long
 function checkCIN(CIN) {
