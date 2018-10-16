@@ -48,14 +48,15 @@ public class SsuFactory implements IDatabaseFactory<SimpleStatusUpdate, SsuPostD
 
 		@Override
 		public SimpleStatusUpdate mapRow(ResultSet rs, int rowNum) throws SQLException {
-			// TODO Issue #30 - Update this mapper class to include the userid column
+			String userid = rs.getString("userid");
+			
 			// TODO Issue #29 - Update this mapper class to include the likes column
 			String id = rs.getString("ssuid");
 			String title = rs.getString("title");
 			String desc = rs.getString("description");
 			Date postDate = rs.getDate("dateposted");
 
-			return new SimpleStatusUpdate(id, title,desc,postDate);
+			return new SimpleStatusUpdate(userid, id, title,desc,postDate);
 
 		}
 
@@ -81,6 +82,8 @@ public class SsuFactory implements IDatabaseFactory<SimpleStatusUpdate, SsuPostD
 
 		try {
 			// TODO Issue #30 - Include userid in the insert statement
+			parameters.put("userid", dataToAdd.getUserid());
+			
 			// TODO Issue #29 - When someone posts a new SSU, it must be inserted into the database with 0 Likes.
 			parameters.put("title", dataToAdd.getTitle());
 			parameters.put("description", dataToAdd.getDescription());
