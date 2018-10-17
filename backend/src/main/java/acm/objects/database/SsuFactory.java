@@ -85,6 +85,7 @@ public class SsuFactory implements IDatabaseFactory<SimpleStatusUpdate, SsuPostD
 			parameters.put("userid", dataToAdd.getUserid());
 			
 			// TODO Issue #29 - When someone posts a new SSU, it must be inserted into the database with 0 Likes.
+			parameters.put("likes", 0);
 			parameters.put("title", dataToAdd.getTitle());
 			parameters.put("description", dataToAdd.getDescription());
 			SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
