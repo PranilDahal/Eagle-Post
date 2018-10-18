@@ -32,6 +32,24 @@ function checkCIN(CIN) {
 		return "Not valid";
 	}
 }
+
+function checkSecretCode(secretCode) {
+	var onlyLetters = /^[a-zA-Z]+$/;
+	var words = secretCode.split(' ');
+	//Secret code must be less than 25 words
+	if (words.length > 25) {
+		return false;
+	}
+	for (var i = 0; i < words.length; i++) {
+		// If a word does not have only letters or is not in lowercase, then not valid
+		if (!(onlyLetters.test(words[i].trim()))
+		   || !(words[i] === words[i].toLowerCase())) {
+			return false;
+		}
+	}
+	return true;
+}
+
 //first name must have no numbers
 function checkFirstName(firstname) {
 	var onlyLetters = /^[a-zA-Z]+$/;
