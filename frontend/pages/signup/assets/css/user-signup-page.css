@@ -1,0 +1,209 @@
+body{
+    margin: 0;
+    padding: 0;
+    background: url(../img/background.jpg);
+    background-position: cover;
+    background-repeat: no-repeat;
+    font-family: 'Oswald', sans-serif;
+    color: white;
+}
+
+.logo {
+    position: relative;
+    right: 0%;
+    top: 3%;
+}
+
+.logo img {
+    width: 300px;
+    position: relative;
+    left: 5%;
+    z-index: -99;
+}
+
+.logo p {
+    font-size: 65px;
+    position: relative;
+    left: 3.3em;
+    top: -1.6em;
+    color: #f1c40f;
+}
+
+.logo a {
+    font-size: 150px;
+    position: relative;
+    left: -5%;
+    top: 10px;
+}
+
+.signup_container{
+    height: 1100px;
+    width: 580px;
+    position: absolute;
+    right: 200px;
+    top: 170px;
+    background-color:rgb(255, 255, 255,0.6);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 10px;
+}
+
+#agreement {
+    position: relative;
+    top: -12%;
+    font-size: 15px;
+    margin: 5%;
+    right: -5%;
+    white-space: nowrap;
+}
+
+.signup_container h1 {
+    width: 200px;
+    right: 310px;
+    position: absolute;
+    font-size:70px;
+    top: -30px;
+    color: rgb(95, 95, 95);
+}
+
+.signup_container p {
+    width: 400px;
+    right: 70px;
+    position: absolute;
+    font-size: 20px;
+    top: 90px;
+    color: #555;
+}
+
+.signup-username {
+    margin: 8%;
+    top: 5%;
+    position: relative;
+}
+
+.signup-Email {
+    margin: 8%;
+    top: -8%;
+    position: relative;
+    white-space: nowrap;
+}
+
+.signup-username p {
+    font-size: 12px;
+    top: 34px;
+    left: 7px;
+}
+
+.signup_first-last_name {
+    margin: 8%;
+    white-space: nowrap;
+    position: relative;
+    top: 15%;
+}
+
+
+.signup-username input {
+    width: 100% !important;
+}
+
+.signup-cin-code {
+    margin: 8%;
+    top: -10px;
+    position: relative;
+    white-space: nowrap;
+}
+
+.signup-date {
+    margin: 8%;
+    white-space: nowrap;
+    position: relative;
+    top: 11%;
+}
+
+.signup-date p{
+    top: -38px;
+    left: 10px;
+}
+
+.signup-date select {
+    width: 33.3% !important;
+    height: 35px;
+    color: #555;
+    
+}
+
+#textcin {
+    border-radius: 4px;
+    display:inline-block;
+    padding: 10px 20px;
+    font-size: 14px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    width: 50%;
+    width: 30% !important;
+}
+
+input {
+    border-radius: 4px;
+    display:inline-block;
+    padding: 10px 20px;
+    font-size: 14px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    width: 50%;
+}
+
+span {
+	font-size: 13px;
+	color: red;
+}
+#textcode {
+    border-radius: 4px;
+    display:inline-block;
+    padding: 10px 20px;
+    font-size: 14px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    width: 50%;
+    width: 69.3% !important;
+}
+
+.signup-button {
+    margin: 8%;
+    position: relative;
+    top: -100px;
+    text-align: center;
+    right: 0px;
+}
+
+#signup-submit {
+    background-color: #f1c40f;
+    width: 70%;
+    height: 5%;
+    font-family:'Oswald', sans-serif;
+    color: rgb(255, 255, 255);
+    font-size: 26px;
+    display:inline-block;
+    border-radius: 4px;
+    text-decoration: none;
+    border: none;
+}
+
+#signup-submit:hover {
+    background-color: #dab215;
+}
+
+#signup-submit:focus {
+    outline: 0;
+}
+
+#signinredirect {
+    text-decoration: none;
+    color: inherit;
+    position: relative;
+    top: -130px;
+    text-align: center;
+    left: 200px;
+}
