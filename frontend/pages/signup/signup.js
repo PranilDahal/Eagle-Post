@@ -1,74 +1,96 @@
 //username must be at least 10 characters long
-function checkUserName(username) {
-	if (username.length() == 10) {
-		return true;
+function checkUserName() {
+  var username = document.getElementById("username").value;
+	
+	if (username.length < 10) {
+		document.getElementById("username_error").innerHTML = "Username must have at least 10 characters";
 	}
 	else {
-		return false;
+		document.getElementById("username_error").innerHTML = "";
 	}
 }
 //Password must be typed twice and must match
-function checkPassword(password, retypePassword) {
+function checkPassword() {
+  var password = document.getElementById("password").value;
+	var retypePassword = document.getElementById("retypePassword").value;
 	var hasNumber = /\d/;
 	var hasSpecialCharacter = /\W/;
 	//Password must contain at least one number and one special character
-	if (password === retypePassword && hasNumber.test(password) 
-		   && hasSpecialCharacter.test(password)) {
-		return true;
-		}
-	return false;	
-}
-//CIN must be 10 digits long
-function checkCIN(CIN) {
-	if (CIN.length == 10) {
-		return CIN;
-	}
-	//If CIN is not entered, set it to 0000000000
-	else if (CIN.length == 0) {
-	CIN = "0000000000";
-	return CIN;
+	if ((password === retypePassword) && (hasNumber.test(password)) && (hasSpecialCharacter.test(password))) {
+		document.getElementById("passwordError").innerHTML = "";
+		document.getElementById("retypePasswordError").innerHTML = "";
 	}
 	else {
-		return "Not valid";
+		document.getElementById("passwordError").innerHTML = "Password must match, have a number and a special character";
+		document.getElementById("retypePasswordError").innerHTML = "Retyped password must match, have a number and a special character";
+	}
+}
+//CIN must be 10 digits long
+function checkCIN() {
+  var CIN = document.getElementById("cin").value;
+	var onlyNumbers = /^[0-9]+$/;
+	//If CIN is not entered, set it to 0000000000
+	if (CIN.length == 0) {
+		CIN = "000000000";
+		}
+	else if (!(CIN.length == 9) || !(onlyNumbers.test(CIN))) {
+		document.getElementById("cinError").innerHTML = "CIN must be 9 digits";
+	}
+	else {
+		document.getElementById("cinError").innerHTML = "";
 	}
 }
 
-function checkSecretCode(secretCode) {
+function checkSecretCode() {
+  var secretCode = document.getElementById("textcode").value;
 	var onlyLetters = /^[a-zA-Z]+$/;
 	var words = secretCode.split(' ');
-	//Secret code must be less than 25 words
-	if (words.length > 25) {
-		return false;
-	}
 	for (var i = 0; i < words.length; i++) {
 		// If a word does not have only letters or is not in lowercase, then not valid
 		if (!(onlyLetters.test(words[i].trim()))
 		   || !(words[i] === words[i].toLowerCase())) {
-			return false;
+			document.getElementById("secretCodeError").innerHTML = "Secret code must have no symbols or be in lowercase";
+		}
+		else {
+			document.getElementById("secretCodeError").innerHTML = "";
 		}
 	}
-	return true;
 }
 
 //first name must have no numbers
-function checkFirstName(firstname) {
+function checkFirstName() {
+  var firstname = document.getElementById("firstname").value;
+	var hasNumber = /\d/;
 	var onlyLetters = /^[a-zA-Z]+$/;
-	return onlyLetters.test(firstname);
+	if(onlyLetters.test(firstname)) {
+		document.getElementById("firstname_error").innerHTML = "";
+	}
+	else if (hasNumber.test(firstname)){
+		document.getElementById("firstname_error").innerHTML = "No numbers allowed";
+	}
 }
 //last name must have no numbers
-function checkLastName(lastname) {
+function checkLastName() {
+  var lastname = document.getElementById("lastname").value;
+	var hasNumber = /\d/;
 	var onlyLetters = /^[a-zA-Z]+$/;
-	return onlyLetters.test(lastname);
+	if(onlyLetters.test()) {
+		document.getElementById("lastname_error").innerHTML = "";
+	}
+	else if (hasNumber.test(lastname)){
+		document.getElementById("lastname_error").innerHTML = "No numbers allowed";
+	}
 }
 //phone number must be in 888-888-8888 format
-function checkPhoneNumber(phonenumber) {
+function checkPhoneNumber() {
+  var phonenumber = document.getElementById("phonenumber").value;
 	var phonenumberFormat = /\d{3}-\d{3}-\d{4}/;
-	return phonenumberFormat.test(phonenumber);
-}
-//birthday must be yyyy-mm-dd format
-function checkBirthday(birthday) {
-	var birthdayFormat = /\d{4}-\d{2}-\d{2}$/;
-	return birthdayFormat.test(birthday);
+	if (phonenumberFormat.test(phonenumber)) {
+		document.getElementById("phoneNumberError").innerHTML = "";
+	}
+	else {
+		document.getElementById("phoneNumberError").innerHTML = "Phone number must be in ###-###-#### format";
+	}
 }
 
 function signUp() {
