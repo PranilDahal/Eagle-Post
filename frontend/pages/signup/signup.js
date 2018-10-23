@@ -74,7 +74,7 @@ function checkLastName() {
   var lastname = document.getElementById("lastname").value;
 	var hasNumber = /\d/;
 	var onlyLetters = /^[a-zA-Z]+$/;
-	if(onlyLetters.test()) {
+	if(onlyLetters.test(lastname)) {
 		document.getElementById("lastname_error").innerHTML = "";
 	}
 	else if (hasNumber.test(lastname)){
