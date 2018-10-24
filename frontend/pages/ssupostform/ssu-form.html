@@ -5,20 +5,6 @@
 	<title>Create A Post</title>
 	<link rel="stylesheet" href="ssu-form.css">
 	<link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-	<script>
-	$(function(){
-	    // Add your code here
-	    $("#title").keyup(function(){
-	    	if ($("#title").val().length > 15) {
-	    		$("#titleError").html("test")
-	    	}
-	    	else {
-	    		$("#titleError").html("")
-	    	}	    	
-	    });
-	});
-	</script>
   </head>
 
   <body>
@@ -33,7 +19,7 @@
 			</div>
 			<div id="descriptionEntry">				
 				Description <span id="descriptionError"></span><br>
-				<textarea rows="20" name="description"></textarea>
+				<textarea id="description" rows="20" name="description"></textarea>
 			</div>
 			<button id="post">Post It!</button>
 		</form>
