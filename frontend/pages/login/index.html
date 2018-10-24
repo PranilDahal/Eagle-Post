@@ -25,22 +25,47 @@
             <span class="password-text">
                 Password
             </span>
-
+<!---- login starts here ----->
+<!---
             <div class="wrap-input-1 validate-input" data-validate="Username is required">
-                    <input class="username-input" type="text" name="username">
-        
-            </div>
+                    <input class="username-input" type="text" name="username" onkeydown="enterUnicodeKey()>
+            </div> 
 
             <div class="wrap-input-2 validate-input" data-validate="Password is required">
-                    <input class="password-input" type="password" name="password">
+                    <input class="password-input" type="password" name="password" onkeydown="enterUnicodeKey()">
             </div>
-
+			
             <div class="login-button">
-                <button class="login-button-btn">
+                <button class="login-button-btn" onclick="clickLogin()">
                     LOGIN
                 </button>
             </div>
+--->
+<!----- login ends here ----->
 
+
+<!----- 
+https://www.chromium.org/developers/design-documents/create-amazing-password-forms
+Group related fields in a single form
+Make sure that each authentication process (registration, login or change password) is grouped together in a single <form> element. Don’t combine multiple processes (like registration and login), or skip the <form> element.
+--->
+<!---- login form  ---->
+<form class = "validate-form">
+			         <div class="wrap-input-1 validate-input" data-validate="Username is required">
+                    <input class="username-input" type="text" name="username" onkeydown="enterUnicodeKey()>
+            </div> 
+
+            <div class="wrap-input-2 validate-input" data-validate="Password is required">
+                    <input class="password-input" type="password" name="password" onkeydown="enterUnicodeKey()">
+            </div>
+			
+            <div class="login-button">
+                <button class="login-button-btn" onclick="clickLogin()">
+                    LOGIN
+                </button>
+            </div>
+</form>
+<!---- end login form  ---->			
             <div class="signup-button">
                 <button class="signup-button-btn">
                     SIGN UP
@@ -65,7 +90,8 @@
 
         </div>
     
-        <script src="main.js"></script>
+        <script src="main.js">
+		</script>
 
     </body>
 </html>
