@@ -19,7 +19,7 @@ body {
     top: -10%;
     background: #f1c40f;
     border-radius: 5px;
-    box-shadow: 5px 10px rgba(0, 0, 0, 0.5);
+  	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     color: white;
 }
 
@@ -32,11 +32,20 @@ body {
 	height: 60%;
 	width: 60%;
 	background: white;
-    box-shadow: 5px 10px rgba(0, 0, 0, 0.75);
+  	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 5px;
 }
 
-.entry {
-	padding: 10px;
+#titleEntry {
+	padding-left: 10px;
+	padding-right: 10px;
+	margin-top: 5px;
+}
+
+#descriptionEntry {
+	padding-left: 10px;
+	padding-right: 10px;
+	margin-top: -20px;
 }
 
 #title {
@@ -51,19 +60,27 @@ body {
 }
 
 textarea {
+	font-family: inherit;
 	resize: none;
 	width: 100%;
 }
 
+button {
+	font-family: inherit;
+}
+
 #post {
 	float: right;
-	margin-bottom: 5px;
 	background: #f1c40f;
-	margin-right: 10px;
-	margin-bottom: 10px;
-    box-shadow: 5px 10px rgba(0, 0, 0, 0.5);    
+	margin: 10px;
+  	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);  
     border-radius: 5px;
-    padding-left: 25px;
-    padding-right: 25px;
+    padding: 15px 64px;
     color: white;
+    font-size: 24px;
+    text-decoration: none;
+}
+
+#post:hover {
+	background-color: #dab215 !important;
 }
