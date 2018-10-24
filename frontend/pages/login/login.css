@@ -173,17 +173,17 @@ body {
 .left-box-line {
     width: 120;
     height: 2;
-    background: #ffffff;
+    background: #f1c40f;
     position: absolute;
-    transform: translate(22%, 6530%);
+    transform: translate(-198%, 8030%);
     border-radius: 5%;
 }
 
 .right-box-line {
     width: 120;
     height: 2;
-    background: #ffffff;
-    transform: translate(159%, 6530%);
+    background: #f1c40f;
+    transform: translate(-60%, 8030%);
     position: absolute;
     border-radius: 5%;
 }
@@ -194,7 +194,7 @@ body {
     line-height: 1.2;
     color: #ffffff;
     position: absolute;
-    transform: translate(745%, 500%);
+    transform: translate(-500%, 618%);
 
     -webkit-user-select: none;
     -moz-user-select: none; 
@@ -211,7 +211,7 @@ body {
     line-height: 1.2;
     color: #646464;
     position: absolute;
-    transform: translate(370%, 770%);
+    transform: translate(-20%, 1015%);
     text-decoration-line: none;
 
     -webkit-user-select: none;
