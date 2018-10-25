@@ -48,6 +48,44 @@ public class HumanUser implements UserDetails{
 		this.birthday = birthDay;
 		this.secretcode = secretCode;
 	}
+	
+	
+	public AccountSettingsData getAccountSettingsInfo(@PathVariable("userid") String userid) {
+
+        HumanUser user = userFactory.getById(userid);
+
+
+        String fname =user.getFirstName();
+        String lname =user.getLastName();
+        String cin = user.getCIN();
+        String phoneNumber = user.getPhoneNumber();
+        Date birthDate = user.getBirthDay();
+        String emailAddress = user.getEmailAddress();
+        String secretCode = user.getSecretCode();
+
+        int userID = user.getUserId();
+
+        String userId = Integer.toString(userID);
+
+
+        String userName =user.getUserName();         //9
+
+       
+
+        AccountSettingsData userDataWithoutPassword = new AccountSettingsData (userId, fname, lname, userName, cin,
+
+                              phoneNumber,emailAddress, (java.sql.Date) birthDate, secretCode);
+
+ 
+
+             
+
+
+
+        return userDataWithoutPassword;
+
+}
+
 
 	public String getFirstName() {
 		return firstname;
