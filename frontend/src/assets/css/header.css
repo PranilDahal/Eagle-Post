@@ -3,6 +3,7 @@
 
 .top_menu {
     background: #38011b;
+    width: 100%;
   }
   
 .navbar {
@@ -11,6 +12,7 @@
     background: transparent;
     padding: 0px;
     border: 0px;
+    overflow: hidden;
   }
   
 .navbar_link {
