@@ -56,10 +56,15 @@ public class SsuControllers {
 		return Collections.singletonMap("id", id+"");
 	}
 	
-	public int deleteById(String ssuId) {
-
-        // CODE HERE
-	return 0;
+	/**
+	 * @author Andy Echeverria
+	 * @param ssuId
+	 * @return -1 if deletion is unsuccessful
+	 */
+	@RequestMapping(value = "/{ssuId}", method = RequestMethod.POST)
+	public int deleteById(@PathVariable("ssuid") String ssuId) {
+		int deletion = SsuDatabaseBean.deleteById(ssuId);
+		return deletion;
 	}
 
 }
