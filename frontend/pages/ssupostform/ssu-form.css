@@ -96,3 +96,10 @@ button {
 	font-size: 15px;
 	float: right;
 }
+
+#noInputError {
+	color: red;
+	font-size: 15px;
+	float: left;
+	margin-left: 10px;
+}
