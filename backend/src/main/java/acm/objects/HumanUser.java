@@ -8,30 +8,30 @@ import org.springframework.security.core.userdetails.UserDetails;
 
 /**
  * @author Pranil
- * 
+ *
  * @description This is a class for user accounts that are personal.
  *
  */
 public class HumanUser implements UserDetails{
-	
+
 	public int userid;
 
 	public String firstname;
-	
+
 	public String lastname;
-	
+
 	public String username;
-	
+
 	public String password;
-	
+
 	public String cin;
-	
+
 	public String phonenumber;
-	
+
 	public String emailaddress;
-	
+
 	public Date birthday;
-	
+
 	public String secretcode;
 
 	public HumanUser(int userId, String firstName, String lastName, String userName, String password, String cin,
@@ -49,43 +49,6 @@ public class HumanUser implements UserDetails{
 		this.secretcode = secretCode;
 	}
 	
-	
-	public AccountSettingsData getAccountSettingsInfo(@PathVariable("userid") String userid) {
-
-        HumanUser user = userFactory.getById(userid);
-
-
-        String fname =user.getFirstName();
-        String lname =user.getLastName();
-        String cin = user.getCIN();
-        String phoneNumber = user.getPhoneNumber();
-        Date birthDate = user.getBirthDay();
-        String emailAddress = user.getEmailAddress();
-        String secretCode = user.getSecretCode();
-
-        int userID = user.getUserId();
-
-        String userId = Integer.toString(userID);
-
-
-        String userName =user.getUserName();         //9
-
-       
-
-        AccountSettingsData userDataWithoutPassword = new AccountSettingsData (userId, fname, lname, userName, cin,
-
-                              phoneNumber,emailAddress, (java.sql.Date) birthDate, secretCode);
-
- 
-
-             
-
-
-
-        return userDataWithoutPassword;
-
-}
-
 
 	public String getFirstName() {
 		return firstname;
