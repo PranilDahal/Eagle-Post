@@ -1,15 +1,19 @@
 package acm.objects.database;
 
 import java.sql.Date;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.List;
 import javax.sql.DataSource;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.core.RowMapper;
 import org.springframework.jdbc.core.simple.SimpleJdbcInsert;
 import org.springframework.stereotype.Component;
 import acm.objects.HumanUser;
+import acm.objects.SimpleStatusUpdate;
 import acm.objects.datahandlers.HumanUserPostData;
 
 /**
@@ -26,31 +30,61 @@ public class HumanUserFactory implements IDatabaseFactory<HumanUser, HumanUserPo
 
 	private SimpleJdbcInsert insertHumanUser;
 
+	//TODO Issue #18 and #15
+	// Fill the methods that are empty in the class
+	// You will also need to fill the RowMapper class
 
 	@Autowired
 	public void setDataSource(DataSource dataSource) {
 		this.jdbcTemplate = new JdbcTemplate(dataSource);
+		// Choosing the table name
 		this.insertHumanUser = new SimpleJdbcInsert(dataSource).withTableName("users");
 	}
 
+	private static class HumanUsersRowMapper implements RowMapper<HumanUser> {
 
+		@Override
+		public HumanUser mapRow(ResultSet rs, int rowNum) throws SQLException {
+
+			// TODO Issue #18 and #15 - The purpose of this class is to create a HumanUser object based on each SQL row
+			// Look at the SsuFactory's RowMapper class for example
+
+			String id = rs.getString("put the column name for the user id");
+			String firstName = rs.getString("put the column name for the first name of users");
+			// and so on ... 
+			
+			// To find the exact column names, look at https://github.com/PranilDahal/SocialMediaApp/issues/11
+			// The setup script doesn't have the table yet. Issue #7 created the sql table.
+			
+			// And then, use all the data that you collect to create a HumanUser object.
+			//	return new HumanUser(id, firstName, blah ...)
+			return null;
+
+		}
+
+	}
+
+	// TODO Issue #18 and #15 - 
+	// ***** For all the methods below, you will need to create SQL statements.*****
+	// Look at the top of SsuFactory.java for example.
+	
 	@Override
 	public List<HumanUser> getAllFromDatabase() {
-		// TODO Auto-generated method stub
+		// TODO Issue #18 and #15 - Returns ALL the users from database
 		return null;
 	}
 
 
 	@Override
 	public HumanUser getById(String id) {
-		// TODO Auto-generated method stub
+		// TODO Issue #18 and #15 - Returns user based on id
 		return null;
 	}
 
 
 	@Override
 	public String insertToDatabase(HumanUserPostData postData) {
-		// TODO Auto-generated method stub
+		// TODO Issue #18 and #15 - Inserts a new user into the database
 		return null;
 	}
 
@@ -60,7 +94,7 @@ public class HumanUserFactory implements IDatabaseFactory<HumanUser, HumanUserPo
 	 * @return a HumanUser object with the specific username
 	 */
 	public HumanUser getByUsername(String username) {
-		// TODO Auto-generated method stub
+		// TODO Issue #18 and #15 - Returns a humanUser with specific username
 		return null;
 	}
 
@@ -70,7 +104,7 @@ public class HumanUserFactory implements IDatabaseFactory<HumanUser, HumanUserPo
 	 * @return true/false depending on whether there exists a human account with that username
 	 */
 	public boolean existsByUsername(String username) {
-		// TODO Auto-generated method stub
+		// TODO Issue #18 and #15 - returns true/false depending on whether there exists a human account with that username
 		return true;
 	}
 
@@ -80,7 +114,7 @@ public class HumanUserFactory implements IDatabaseFactory<HumanUser, HumanUserPo
 	 * @return true/false based on whether there exists a human account with that email
 	 */
 	public boolean existsByEmail(String email) {
-		// TODO Auto-generated method stub
+		// TODO Issue #18 and #15 - Returns true/false based on whether there exists a human account with that email
 		return true;
 	}
 
