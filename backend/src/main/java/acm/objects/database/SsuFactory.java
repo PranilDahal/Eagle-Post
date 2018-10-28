@@ -15,6 +15,7 @@ import javax.sql.DataSource;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
+import org.springframework.jdbc.core.simple.SimpleJdbcCall;
 import org.springframework.jdbc.core.simple.SimpleJdbcInsert;
 import org.springframework.stereotype.Component;
 
@@ -32,16 +33,18 @@ public class SsuFactory implements IDatabaseFactory<SimpleStatusUpdate, SsuPostD
 	public static final String GET_ALL_SSU = "select * from ssu";
 
 	public static final String GET_SSU_FROM_ID = "select * from ssu where ssuId= ?";
+	
+	public static final String DELETE_WITH_ID = "delete from ssu where ssuid= ?";
 
 	private JdbcTemplate jdbcTemplate;
 
 	private SimpleJdbcInsert insertSsu;
-
+	
 
 	@Autowired
 	public void setDataSource(DataSource dataSource) {
 		this.jdbcTemplate = new JdbcTemplate(dataSource);
-		this.insertSsu = new SimpleJdbcInsert(dataSource).withTableName("ssu").usingGeneratedKeyColumns("ssuId");
+		this.insertSsu = new SimpleJdbcInsert(dataSource).withTableName("ssu").usingGeneratedKeyColumns("ssuId");		
 	}
 
 	private static class SsuValuesMapper implements RowMapper<SimpleStatusUpdate> {
@@ -103,6 +106,25 @@ public class SsuFactory implements IDatabaseFactory<SimpleStatusUpdate, SsuPostD
 			return "-1";
 		}
 	}
+	
+	/**
+	 * @author Andy Echeverria
+	 * @param ssuId
+	 * @return 1 if deletion is successful else return -1 if unsuccessful
+	 */
+	public int deleteById(String ssuId) {
+		
+		try {
+			this.jdbcTemplate.update(DELETE_WITH_ID, ssuId);
+			return 1;
+		}
+		catch (RuntimeException e){
+			System.out.println("ERROR: FAILED TO EXECUTE SQL STATEMENT");
+			e.printStackTrace();
+			return -1;
+		}
+	}
+
 
 
 	/**
