@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  
+  <head>
+	<title>Create A Post</title>
+	<link rel="stylesheet" href="ssu-form.css">
+	<link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
+  </head>
+
+  <body>
+	<div id="box">
+		<div id="createAPost">
+			<h1>CREATE A POST</h1>
+		</div>
+		<form>
+			<div id="titleEntry">
+				Title <span id="titleError"></span><br>
+				<input id="title" type="text" name="title"><br><br>
+			</div>
+			<div id="descriptionEntry">				
+				Description <span id="descriptionError"></span><br>
+				<textarea id="description" rows="20" name="description"></textarea>
+			</div>
+			<div id="noInputError"></div>
+			<button type="button" id="post">Post It!</button>
+		</form>
+	</div>
+	<script src="jquery_3.3.1.js"></script>
+	<script src="ssu-form.js"></script>
+  </body>
+
+</html>

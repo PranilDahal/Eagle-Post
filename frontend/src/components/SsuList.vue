@@ -1,7 +1,7 @@
 <template>
 <section class="padding_120">
 
-		<div v-if="SSUs && SSUs.length" class="container col-lg-8">
+		<div v-if="SSUs && SSUs.length" class="container col-lg-8 main_ssu_block">
 
 			<!-- ******** this is where individual post starts******** -->
 			<IndividualSsu v-for="ssu in SSUs" v-bind:key="ssu.ssuId" v-bind:ssu="ssu">
@@ -29,6 +29,7 @@
 				errors: []
     		}
 		},
+		// this function gets called when the vue component is created
 		created() {
 			axios.get(`http://localhost:8080/SSU/all`)
 			.then(response => {

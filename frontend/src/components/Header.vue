@@ -11,6 +11,7 @@
 						<img src="./../assets/img/csula-heading.png" alt="Cal State LA" style="width:45px;height:55px;">
 					</a>
 
+					<!-- TODO Issue #3 - When user clicks this "Post" text, a form should appear -->
 					<a class="navbar_link golden_link" href="">Post</a>
 
 					<ul class="navbar-nav">
@@ -31,7 +32,11 @@
 
 <script>
 	export default {
-	name: 'Header'
+		name: 'Header',
+
+		methods: {
+
+		},
 	}
 </script>
 

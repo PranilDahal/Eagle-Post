@@ -1,0 +1,72 @@
+<!-- Author: Kevin Crespin -->
+
+<html lang="en">
+    <head>
+        <title>Golden Eagle</title>
+        <!--Characters and Devices compatibility-->
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!--Golden Eagle stylesheet-->
+        <link rel="stylesheet" type="text/css" href="login.css"/>
+        <!--Golden Eagle font-->
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oswald">
+        <!--Golden Eagle favicon-->
+        <link rel="favicon" href="images/logo.png">
+        
+    </head>
+    <body>
+        <div class="login-box">
+            <span class="logo"></span>
+            <form class="login-form validate-input">
+
+            <!-- [Text] -->
+
+                <span class="eagle-text">
+                    EAGLE
+                </span>
+                <span class="username-text">
+                    Username
+                </span>
+                <span class="password-text">
+                    Password
+                </span>
+
+            <!-- [Text Input Boxes] -->
+            
+                <input class="username-input" type="text" id="username" spellcheck="false">
+                <input class="password-input" type="password" id="password">
+
+            <!-- [Buttons] -->
+
+                <button class="login-button-btn" value="login" onclick="return login(username.value,password.value);">
+                    LOGIN
+                </button>
+                <!--Sign Up link should be placed here-->
+                <button class="signup-button-btn" value="singup">
+                    SIGN UP
+                </button>
+
+            <!-- [Buttons Divider] -->
+
+                <span class="left-box-line">
+                </span>
+                <span class="right-box-line">
+                </span>
+                <span class="or-text">
+                    OR
+                </span>
+
+            <!-- [Recovery URL] -->
+                <!--Recovery of username/password link should be placed here-->
+                <a class="recovery" href="#">
+				    forgot account?
+                </a>
+            </form>
+        </div>
+
+        <!-- [JavaScript] -->
+    
+        <script src="login.js"></script>
+
+    </body>
+</html>
