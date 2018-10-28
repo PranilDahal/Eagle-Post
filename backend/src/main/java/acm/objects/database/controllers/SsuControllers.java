@@ -62,7 +62,7 @@ public class SsuControllers {
 	 * @return DELETE - http://localhost:8080/SSU/{userid} - Returns 1 if deleted, or -1 if unsuccessful
 	 */
 	@RequestMapping(value = "/{ssuId}", method = RequestMethod.DELETE)
-	public int deleteById(@PathVariable("ssuid") String ssuId) {
+	public int deleteById(@PathVariable("ssuId") String ssuId) {
 		int deletion = SsuFactory.deleteById(ssuId);
 		return deletion;
 	}
