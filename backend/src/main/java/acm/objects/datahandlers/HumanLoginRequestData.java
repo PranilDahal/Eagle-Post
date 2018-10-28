@@ -3,25 +3,25 @@ package acm.objects.datahandlers;
 import javax.validation.constraints.NotBlank;
 
 public class HumanLoginRequestData {
-	
-    private String usernameOrEmail;
 
-    private String password;
+	private String usernameOrEmail;
 
-    public String getUsernameOrEmail() {
-        return usernameOrEmail;
-    }
+	private String password;
 
-    public void setUsernameOrEmail(String usernameOrEmail) {
-        this.usernameOrEmail = usernameOrEmail;
-    }
+	public String getUsernameOrEmail() {
+		return usernameOrEmail;
+	}
 
-    public String getPassword() {
-        return password;
-    }
+	public void setUsernameOrEmail(String usernameOrEmail) {
+		this.usernameOrEmail = usernameOrEmail;
+	}
 
-    public void setPassword(String password) {
-        this.password = password;
-    }
-    
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
 }

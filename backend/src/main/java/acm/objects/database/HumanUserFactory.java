@@ -35,7 +35,6 @@ public class HumanUserFactory implements IDatabaseFactory<HumanUser, HumanUserPo
 	public static final String GET_USER_FROM_EMAIL = "select * from users where emailaddress= ?";
 
 
-
 	private JdbcTemplate jdbcTemplate;
 
 	private SimpleJdbcInsert insertHumanUser;
@@ -68,7 +67,7 @@ public class HumanUserFactory implements IDatabaseFactory<HumanUser, HumanUserPo
 
 
 			// To find the exact column names, look at https://github.com/PranilDahal/SocialMediaApp/issues/11
-			
+
 			// And then, use all the data that you collect to create a HumanUser object.
 			return new HumanUser(id, firstName, lastName, userName, pswd, cin, phoneNumber, emailAddress, birthday, secretCode);
 
@@ -86,8 +85,14 @@ public class HumanUserFactory implements IDatabaseFactory<HumanUser, HumanUserPo
 
 	@Override
 	public HumanUser getById(String id) {
-		HumanUser user = this.jdbcTemplate.queryForObject(GET_USER_FROM_ID, new Object[] {id}, new HumanUsersRowMapper());
-		return user;
+		// Updated to catch more errors
+		List<HumanUser> oneUser = this.jdbcTemplate.query(GET_USER_FROM_ID, new Object[] {id}, new HumanUsersRowMapper());
+		if(oneUser.size() >0) {
+			return oneUser.get(0);
+		}
+		else {
+			return null;
+		}
 	}
 
 
@@ -100,7 +105,7 @@ public class HumanUserFactory implements IDatabaseFactory<HumanUser, HumanUserPo
 			parameters.put("firstname", postData.getFirstName());
 			parameters.put("lastname", postData.getLastName());
 			parameters.put("username", postData.getUserName());
-			parameters.put("password", postData.getPassword());
+			parameters.put("pswd", postData.getPassword());
 			parameters.put("cin", postData.getCIN());
 			parameters.put("phonenumber", postData.getPhoneNumber());
 			parameters.put("emailaddress", postData.getEmailAddress());
@@ -129,8 +134,13 @@ public class HumanUserFactory implements IDatabaseFactory<HumanUser, HumanUserPo
 	 * @return a HumanUser object with the specific username
 	 */
 	public HumanUser getByUsername(String username) {
-		HumanUser user = this.jdbcTemplate.queryForObject(GET_USER_FROM_USERNAME, new Object[] {username}, new HumanUsersRowMapper());
-		return user;
+		List<HumanUser> oneUser = this.jdbcTemplate.query(GET_USER_FROM_USERNAME, new Object[] {username}, new HumanUsersRowMapper());
+		if(oneUser.size() >0) {
+			return oneUser.get(0);
+		}
+		else {
+			return getByEmail(username);
+		}
 	}
 
 
@@ -145,6 +155,20 @@ public class HumanUserFactory implements IDatabaseFactory<HumanUser, HumanUserPo
 		}
 		catch(EmptyResultDataAccessException e) {
 			return false;
+		}
+	}
+
+	/**
+	 * @param email
+	 * @return a HumanUser object with the specific username
+	 */
+	public HumanUser getByEmail(String email) {
+		List<HumanUser> oneUser = this.jdbcTemplate.query(GET_USER_FROM_EMAIL, new Object[] {email}, new HumanUsersRowMapper());
+		if(oneUser.size() >0) {
+			return oneUser.get(0);
+		}
+		else {
+			return null;
 		}
 	}
 

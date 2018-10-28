@@ -1,39 +1,34 @@
 package acm.objects.datahandlers;
 
-import java.sql.Date;
-
-import javax.validation.constraints.Email;
-import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.Size;
 
 public class HumanSignUpRequestData {
 
 	private String firstName;
 
 	private String lastName;
-	
+
 	private String userName;
 
 	private String password;
-	
+
 	private String CIN;
-	
+
 	private String phoneNumber;
-	
+
 	private String emailAddress;
 
 	private String birthDay;
-	
+
 	private String secretCode;
-	
-	public HumanSignUpRequestData(String firstName, String lastName, String userName, String password, String cIN,
+
+	public HumanSignUpRequestData(String firstName, String lastName, String userName, String password, String CIN,
 			String phoneNumber, String emailAddress, String birthDay, String secretCode) {
 		super();
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.userName = userName;
 		this.password = password;
-		CIN = cIN;
+		this.CIN = CIN;
 		this.phoneNumber = phoneNumber;
 		this.emailAddress = emailAddress;
 		this.birthDay = birthDay;
@@ -77,7 +72,7 @@ public class HumanSignUpRequestData {
 	}
 
 	public void setCIN(String cIN) {
-		CIN = cIN;
+		this.CIN = cIN;
 	}
 
 	public String getPhoneNumber() {
@@ -112,5 +107,5 @@ public class HumanSignUpRequestData {
 		this.secretCode = secretCode;
 	}
 
-	
+
 }

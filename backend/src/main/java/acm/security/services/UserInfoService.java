@@ -21,6 +21,9 @@ public class UserInfoService implements UserDetailsService{
 	public UserDetails loadUserByUsername(String username)
 			throws UsernameNotFoundException {
 		HumanUser user = userRepository.getByUsername(username);
+		if(user == null) {
+			throw new UsernameNotFoundException(username+"does not exist");
+		}
 		return user;
 	}
 

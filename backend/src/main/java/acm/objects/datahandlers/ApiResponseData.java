@@ -1,7 +1,7 @@
 package acm.objects.datahandlers;
 
 public class ApiResponseData {
-	
+
 	private Boolean success;
 	private String message;
 
@@ -25,5 +25,5 @@ public class ApiResponseData {
 	public void setMessage(String message) {
 		this.message = message;
 	}
-	
+
 }

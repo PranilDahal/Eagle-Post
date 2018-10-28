@@ -3,21 +3,21 @@ package acm.objects.datahandlers;
 public class HumanUserPostData {
 
 	public String firstname;
-	
+
 	public String lastname;
-	
+
 	public String username;
-	
+
 	public String password;
-	
+
 	public String cin;
-	
+
 	public String phonenumber;
-	
+
 	public String emailaddress;
-	
+
 	public String birthday;
-	
+
 	public String secretcode;
 
 	public HumanUserPostData(String firstName, String lastName, String userName, String password, String cin,
@@ -106,5 +106,5 @@ public class HumanUserPostData {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	
+
 }

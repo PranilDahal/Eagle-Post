@@ -22,6 +22,6 @@ public class SessionEntryPoint implements AuthenticationEntryPoint {
 			AuthenticationException e) throws IOException, ServletException {
 		logger.error("Responding with unauthorized error. Message - {}", e.getMessage());
 		httpServletResponse.sendError(HttpServletResponse.SC_UNAUTHORIZED,
-				"Go away wanna-be hacker, u suk lol");
+				"Sorry, You're not authorized to access this resource.");
 	}
 }

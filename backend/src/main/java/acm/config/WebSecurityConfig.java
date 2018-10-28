@@ -23,55 +23,55 @@ import acm.security.services.UserInfoService;
 @Configuration
 @EnableWebSecurity
 @EnableGlobalMethodSecurity(
-        securedEnabled = true,
-        jsr250Enabled = true,
-        prePostEnabled = true
-)
+		securedEnabled = true,
+		jsr250Enabled = true,
+		prePostEnabled = true
+		)
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter{
 
 	@Autowired
-    UserInfoService userDetailsService;
+	UserInfoService userDetailsService;
 
-    @Autowired
-    private SessionEntryPoint unauthorizedHandler;
+	@Autowired
+	private SessionEntryPoint unauthorizedHandler;
 
-    @Bean
-    public TokenAuthenticationFilter tokenAuthenticationFilter() {
-        return new TokenAuthenticationFilter();
-    }
+	@Bean
+	public TokenAuthenticationFilter tokenAuthenticationFilter() {
+		return new TokenAuthenticationFilter();
+	}
 
-    @Override
-    public void configure(AuthenticationManagerBuilder authenticationManagerBuilder) throws Exception {
-        authenticationManagerBuilder
-                .userDetailsService(userDetailsService)
-                .passwordEncoder(passwordEncoder());
-    }
+	@Override
+	public void configure(AuthenticationManagerBuilder authenticationManagerBuilder) throws Exception {
+		authenticationManagerBuilder
+		.userDetailsService(userDetailsService)
+		.passwordEncoder(passwordEncoder());
+	}
 
-    @Bean(BeanIds.AUTHENTICATION_MANAGER)
-    @Override
-    public AuthenticationManager authenticationManagerBean() throws Exception {
-        return super.authenticationManagerBean();
-    }
+	@Bean(BeanIds.AUTHENTICATION_MANAGER)
+	@Override
+	public AuthenticationManager authenticationManagerBean() throws Exception {
+		return super.authenticationManagerBean();
+	}
 
-    @Bean
-    public PasswordEncoder passwordEncoder() {
-        return new BCryptPasswordEncoder();
-    }
+	@Bean
+	public PasswordEncoder passwordEncoder() {
+		return new BCryptPasswordEncoder();
+	}
 
-    @Override
-    protected void configure(HttpSecurity http) throws Exception {
-//        http.cors().and().csrf().disable()
-//                .exceptionHandling().authenticationEntryPoint(unauthorizedHandler)
-//                .and().sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
-//                .and().authorizeRequests().antMatchers("/","/favicon.ico","/**/*.png","/**/*.gif","/**/*.jpg","/**/*.html","/**/*.css","/**/*.js")
-//                .permitAll()
-//                .antMatchers("/who/**").permitAll()
-//                .anyRequest().authenticated();
-    	
-    	http.cors().and().csrf().disable().authorizeRequests().anyRequest().permitAll();
+	@Override
+	protected void configure(HttpSecurity http) throws Exception {
+		http.cors().and().csrf().disable()
+		.exceptionHandling().authenticationEntryPoint(unauthorizedHandler)
+		.and().sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
+		.and().authorizeRequests().antMatchers("/","/**/favicon.ico","/**/*.png","/**/*.gif","/**/*.jpg","/**/*.html","/**/*.css","/**/*.js")
+		.permitAll()
+		.antMatchers("/who/**").permitAll()
+		.anyRequest().authenticated();
 
-        // Add our custom JWT security filter
-        http.addFilterBefore(tokenAuthenticationFilter(), UsernamePasswordAuthenticationFilter.class);
+		//    	http.cors().and().csrf().disable().authorizeRequests().anyRequest().permitAll();
 
-    }
+		// Add our custom JWT security filter
+		http.addFilterBefore(tokenAuthenticationFilter(), UsernamePasswordAuthenticationFilter.class);
+
+	}
 }

@@ -38,7 +38,14 @@ public class TokenAuthenticationFilter extends OncePerRequestFilter{
 				Long userId = tokenProvider.getUserIdFromJWT(jwt);
 
 				UserDetails userDetails = customUserDetailsService.loadUserById(userId);
-				UsernamePasswordAuthenticationToken authentication = new UsernamePasswordAuthenticationToken(userDetails, null, userDetails.getAuthorities());
+				UsernamePasswordAuthenticationToken authentication=null; 
+
+				try {
+					authentication = new UsernamePasswordAuthenticationToken(userDetails, null, userDetails.getAuthorities());
+				}catch (NullPointerException e) {
+					System.out.println("NullPointerException in line 44 - TokenAuthenticaionFilter.java");
+				}
+
 				authentication.setDetails(new WebAuthenticationDetailsSource().buildDetails(request));
 
 				SecurityContextHolder.getContext().setAuthentication(authentication);
