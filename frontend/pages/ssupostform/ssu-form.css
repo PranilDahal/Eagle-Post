@@ -1,0 +1,105 @@
+/* ******************************SSU FORM CSS********************************** */
+body {
+	font-family: 'Oswald', sans-serif;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	min-height: 100vh;
+	background: gray;
+}
+
+#createAPost {
+	padding-left: 15px;
+	padding-right: 15px;
+	margin-top: -2px;
+	margin-bottom: -2px;
+    position: absolute;
+    left: -2.5%;
+    top: -10%;
+    background: #f1c40f;
+    border-radius: 5px;
+  	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    color: white;
+}
+
+#box {
+	position: relative;
+	padding-top: 40px;
+	padding-left: 5px;
+	padding-right: 15px;
+	padding-bottom: 5px;
+	height: 60%;
+	width: 60%;
+	background: white;
+  	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 5px;
+}
+
+#titleEntry {
+	padding-left: 10px;
+	padding-right: 10px;
+	margin-top: 10px;
+}
+
+#descriptionEntry {
+	padding-left: 10px;
+	padding-right: 10px;
+	margin-top: -20px;
+}
+
+#title {
+	width: 100%;
+	padding: 5px;
+}
+
+#description {
+	width: 100%;
+	padding: 5px;
+	height: 200px;
+}
+
+textarea {
+	font-family: inherit;
+	resize: none;
+	width: 100%;
+}
+
+button {
+	font-family: inherit;
+}
+
+#post {
+	float: right;
+	background: #f1c40f;
+	margin: 10px;
+  	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);  
+    border-radius: 5px;
+    padding: 15px 64px;
+    color: white;
+    font-size: 24px;
+    text-decoration: none;
+}
+
+#post:hover {
+	background-color: #dab215 !important;
+}
+
+#titleError {
+	color: red;
+	font-size: 15px;
+	float: right;
+}
+
+#descriptionError {
+	color: red;
+	font-size: 15px;
+	float: right;
+}
+
+#noInputError {
+	color: red;
+	font-size: 15px;
+	float: left;
+	margin-left: 10px;
+}

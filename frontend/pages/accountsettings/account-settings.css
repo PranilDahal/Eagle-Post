@@ -1,0 +1,35 @@
+body{
+  font-family: 'Oswald', sans-serif;
+  background-color: #DBDDE2
+
+}
+
+.card_background{
+  background-color: white;
+  border-radius: 5px;
+  -webkit-box-shadow: 0 0 7px 2px #888888;
+  -moz-box-shadow: 0 0 7px 2px #888888;
+  box-shadow: 0 0 7px 2px #888888;
+}
+
+
+.bg_yellow_custom{
+
+  background-color :#f1c40f;
+  color:white;
+}
+.shrink_width{
+
+}
+.center_me{
+margin-left: 10px;
+margin-right: 10px;;
+
+}
+
+td{
+
+}
+.p_text{
+
+}
