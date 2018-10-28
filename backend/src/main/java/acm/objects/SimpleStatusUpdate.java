@@ -12,6 +12,8 @@ public class SimpleStatusUpdate{
 	public String userid;
 	
 	// TODO Issue #29 - Add a field for number of likes (int) - Create Getters/Setters - Update constructors
+	public int likes;
+	
 	public String ssuid;
 
 	public String title;
@@ -20,8 +22,9 @@ public class SimpleStatusUpdate{
 
 	public Date dateposted;
 
-	public SimpleStatusUpdate(String userid, String id, String title, String description, Date datePosted) {
+	public SimpleStatusUpdate(String userid, String id, String title, String description, Date datePosted, int likes) {
 		super();
+		this.likes = likes;
 		this.userid = userid;
 		this.ssuid = id;
 		this.title = title;
@@ -79,6 +82,12 @@ public class SimpleStatusUpdate{
 		this.userid = userid;
 	}
 	
-	
+	public int getLikes() {
+		return likes;
+	}
+
+	public void setLikes(int likes) {
+		this.likes = likes;
+	}
 
 }
