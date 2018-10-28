@@ -40,9 +40,6 @@ public class HumanUserFactory implements IDatabaseFactory<HumanUser, HumanUserPo
 
 	private SimpleJdbcInsert insertHumanUser;
 
-	//TODO Issue #18 and #15
-	// Fill the methods that are empty in the class
-	// You will also need to fill the RowMapper class
 
 	@Autowired
 	public void setDataSource(DataSource dataSource) {
@@ -56,11 +53,9 @@ public class HumanUserFactory implements IDatabaseFactory<HumanUser, HumanUserPo
 		@Override
 		public HumanUser mapRow(ResultSet rs, int rowNum) throws SQLException {
 
-			// TODO Issue #18 and #15 - The purpose of this class is to create a HumanUser object based on each SQL row
-			// Look at the SsuFactory's RowMapper class for example
 
 			int id = ((Number) rs.getObject("userid")).intValue();
-			//String id = rs.getString("userid");
+
 			String firstName = rs.getString("firstname");
 			String lastName = rs.getString("lastname");
 			String userName = rs.getString("username");
@@ -73,7 +68,6 @@ public class HumanUserFactory implements IDatabaseFactory<HumanUser, HumanUserPo
 
 
 			// To find the exact column names, look at https://github.com/PranilDahal/SocialMediaApp/issues/11
-			// The setup script doesn't have the table yet. Issue #7 created the sql table.
 			
 			// And then, use all the data that you collect to create a HumanUser object.
 			return new HumanUser(id, firstName, lastName, userName, pswd, cin, phoneNumber, emailAddress, birthday, secretCode);
@@ -81,10 +75,6 @@ public class HumanUserFactory implements IDatabaseFactory<HumanUser, HumanUserPo
 		}
 
 	}
-
-	// TODO Issue #18 and #15 - 
-	// ***** For all the methods below, you will need to create SQL statements.*****
-	// Look at the top of SsuFactory.java for example.
 
 
 	@Override
@@ -106,7 +96,6 @@ public class HumanUserFactory implements IDatabaseFactory<HumanUser, HumanUserPo
 		Map<String, Object> parameters = new HashMap<String, Object>();
 
 		try {
-			// TODO Issue #18 and #15 - Inserts a new user into the database
 
 			parameters.put("firstname", postData.getFirstName());
 			parameters.put("lastname", postData.getLastName());
