@@ -115,8 +115,8 @@ public class SsuFactory implements IDatabaseFactory<SimpleStatusUpdate, SsuPostD
 	public int deleteById(String ssuId) {
 		
 		try {
-			this.jdbcTemplate.update(DELETE_WITH_ID, ssuId);
-			return 1;
+			int rows = this.jdbcTemplate.update(DELETE_WITH_ID, ssuId);
+			return rows;
 		}
 		catch (RuntimeException e){
 			System.out.println("ERROR: FAILED TO EXECUTE SQL STATEMENT");
@@ -158,26 +158,6 @@ public class SsuFactory implements IDatabaseFactory<SimpleStatusUpdate, SsuPostD
 
 
 		return null;
-	}
-
-
-	/**
-	 * @param ssuId - if of the SSU to delete
-	 * @return ssuid of the SSU that got deleted OR -1 if unsuccesful
-	 */
-	public int deleteById(String ssuId) {
-
-		// TODO Issue #16
-		
-		// Step 1: Create a SQL statement at the top of this class
-		
-		// Step 2: Execute the SQL statement using the jdbcTemplate object 
-		// (look at the methods inside SsuFactory.java to see how it works)
-		
-		//Step 3: Surround your code in try-catch block. If the execution goes wrong (an exception is thrown), return -1
-		// If SQL statement executes properly, return the ssuId
-		
-		return -1;
 	}
 	
 	/**

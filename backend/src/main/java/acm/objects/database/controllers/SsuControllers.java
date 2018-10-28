@@ -58,12 +58,12 @@ public class SsuControllers {
 	
 	/**
 	 * @author Andy Echeverria
-	 * @param ssuId
-	 * @return -1 if deletion is unsuccessful
+	 * @param ssuid - the unique ssuid of the SSU to delete
+	 * @return DELETE - http://localhost:8080/SSU/{userid} - Returns 1 if deleted, or -1 if unsuccessful
 	 */
 	@RequestMapping(value = "/{ssuId}", method = RequestMethod.POST)
 	public int deleteById(@PathVariable("ssuid") String ssuId) {
-		int deletion = SsuDatabaseBean.deleteById(ssuId);
+		int deletion = SsuFactory.deleteById(ssuId);
 		return deletion;
 	}
 
@@ -84,21 +84,7 @@ public class SsuControllers {
 		// *** Stay in touch with whoever is doing Issue #30. SSUs don't have a userid identifiers yet. Issue #30 implements userid 
 		// for SSU class. Have him/her merge his code first, then test your code. OR work together in the same branch with him/her.***
 		return null;
-	}
-
-	
-	/**
-	 * @param ssuid - the unique ssuid of the SSU to delete
-	 * @return DELETE - http://localhost:8080/SSU/{userid} - Returns the id of the SSU deleted, or -1 if unsuccessful
-	 */
-	@RequestMapping(value="/{ssuid}", method = RequestMethod.DELETE)
-	public int deleteById(@PathVariable("ssuid") String ssuid) {
-		// TODO Issue #16 (Don't forget to document this API on the wiki)
-
-		// this method should call deleteById(String ssuId) inside SsuFactory and return the result.
-		return -1;
-	}
-	
+	}	
 	
 	/**
 	 * @param ssuid - the unique ssuid of the SSU to delete | dataToUpdate - The updated SSU datahandler object
