@@ -1,1 +1,223 @@
-/* ******************************LOGIN PAGE CSS********************************** */
+/* Author: Kevin Crespin */
+
+/*[Background]*/
+
+body {
+    margin: 0;
+    padding: 0; 
+    background: url(images/background.png);
+    background-size: cover;
+    background-position: center;
+    font-family: 'Oswald', sans-serif;
+}
+
+/*[Login Box]*/
+
+.login-box {
+    width: 340;
+    height: 330;
+    background: #ffffffaf;
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    border-radius: 5%;
+}
+
+/*[Golden Eagle]*/
+
+.logo {
+    width: 195;
+    height: 182;
+    background: url(images/logo.png);
+    background-size: cover;
+    background-position: center;
+    position: absolute;
+    transform: translate(-20%, -68%);
+}
+
+/*[Text]*/
+
+.eagle-text {
+    font-family: 'Oswald', sans-serif;
+    font-size: 100;
+    line-height: 1.8;
+    color: #ffffff;
+    position: absolute;
+    transform: translate(10%, -40%);
+
+    -webkit-user-select: none;
+    -moz-user-select: none; 
+    -ms-user-select: none;
+    user-select: none
+}
+
+.username-text {
+    font-family: 'Oswald', sans-serif;
+    font-size: 20;
+    line-height: 1.8;
+    color: #646464;
+    position: absolute;
+    transform: translate(35%, 180%);
+
+    -webkit-user-select: none;
+    -moz-user-select: none; 
+    -ms-user-select: none;
+    user-select: none
+}
+
+.password-text {
+    font-family: 'Oswald', sans-serif;
+    font-size: 20;
+    line-height: 1.8;
+    color: #646464;
+    position: absolute;
+    transform: translate(35%, 355%);
+
+    
+    -webkit-user-select: none;
+    -moz-user-select: none; 
+    -ms-user-select: none;
+    user-select: none
+}
+
+/*[Input Boxes]*/
+
+.username-input {
+    width: 311;
+    height: 30;
+    border-radius: 3;
+    padding-left: 1%;
+    transform: translate(4%, 318%);
+    
+    font-family: sans-serif;
+    font-size: 15;
+    line-height: 1.2;
+}
+
+.password-input {
+    width: 311;
+    height: 30;
+    border-radius: 3;
+    padding-left: 1%;
+    transform: translate(4%, 428%);
+
+    font-family: sans-serif;
+    font-size: 15;
+    line-height: 1.2;
+}
+
+/*[Login Button]*/
+
+.login-button-btn {
+    width: 265;
+    height: 32;
+    border-radius: 3;
+    border: 0;
+    display: inline-block;
+    background-color: #f1c40f;
+    transform: translate(14%, 440%);
+
+    font-family: 'Oswald', sans-serif;
+    font-size: 20;
+    color: #ffffff;
+    line-height: 1;
+    text-transform: uppercase;
+  
+    -webkit-transition: all 0.4s;
+    -o-transition: all 0.4s;
+    -moz-transition: all 0.4s;
+    transition: all 0.4s;
+
+    -webkit-user-select: none;
+    -moz-user-select: none; 
+    -ms-user-select: none;
+    user-select: none
+}
+
+/*[Sign Up Button]*/
+
+.signup-button-btn {
+    width: 265;
+    height: 32;
+    border-radius: 3;
+    border: 0;
+    display: inline-block;
+    background-color: #f1c40f;
+    transform: translate(14%, 580%);
+
+    font-family: 'Oswald', sans-serif;
+    font-size: 20;
+    color: #ffffff;
+    line-height: 1;
+    text-transform: uppercase;
+  
+    -webkit-transition: all 0.4s;
+    -o-transition: all 0.4s;
+    -moz-transition: all 0.4s;
+    transition: all 0.4s;
+    
+    -webkit-user-select: none;
+    -moz-user-select: none; 
+    -ms-user-select: none;
+    user-select: none
+}
+
+/*[Button Hover]*/
+
+.login-button-btn:hover,
+.signup-button-btn:hover {
+    background-color: #fbff00;
+}
+
+/*[Button Separators]*/
+
+.left-box-line {
+    width: 120;
+    height: 2;
+    background: #f1c40f;
+    position: absolute;
+    transform: translate(-198%, 8030%);
+    border-radius: 5%;
+}
+
+.right-box-line {
+    width: 120;
+    height: 2;
+    background: #f1c40f;
+    transform: translate(-60%, 8030%);
+    position: absolute;
+    border-radius: 5%;
+}
+
+.or-text {
+    font-family: 'Oswald', sans-serif;
+    font-size: 20;
+    line-height: 1.2;
+    color: #ffffff;
+    position: absolute;
+    transform: translate(-500%, 618%);
+
+    -webkit-user-select: none;
+    -moz-user-select: none; 
+    -ms-user-select: none;
+    user-select: none
+}
+
+
+/*[Forgot Account?]*/
+
+.recovery {
+    font-family: 'Oswald', sans-serif;
+    font-size: 12;
+    line-height: 1.2;
+    color: #646464;
+    position: absolute;
+    transform: translate(-20%, 1015%);
+    text-decoration-line: none;
+
+    -webkit-user-select: none;
+    -moz-user-select: none; 
+    -ms-user-select: none;
+    user-select: none
+}
