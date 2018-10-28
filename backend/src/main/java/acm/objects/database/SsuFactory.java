@@ -51,12 +51,13 @@ public class SsuFactory implements IDatabaseFactory<SimpleStatusUpdate, SsuPostD
 			String userid = rs.getString("userid");
 			
 			// TODO Issue #29 - Update this mapper class to include the likes column
+			int likes = rs.getInt("likes");
 			String id = rs.getString("ssuid");
 			String title = rs.getString("title");
 			String desc = rs.getString("description");
 			Date postDate = rs.getDate("dateposted");
 
-			return new SimpleStatusUpdate(userid, id, title,desc,postDate);
+			return new SimpleStatusUpdate(userid, id, title,desc,postDate, likes);
 
 		}
 
