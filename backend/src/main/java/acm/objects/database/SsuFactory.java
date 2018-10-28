@@ -14,6 +14,7 @@ import java.util.Map;
 import javax.sql.DataSource;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.jdbc.core.simple.SimpleJdbcCall;
@@ -35,7 +36,7 @@ public class SsuFactory implements IDatabaseFactory<SimpleStatusUpdate, SsuPostD
 
 	public static final String GET_SSU_FROM_ID = "select * from ssu where ssuId= ?";
 
-	public static final String DELETE_WITH_ID = "delete from ssu where ssuid= ?";
+	public static final String DELETE_WITH_ID = "DELETE FROM ssu where ssuid= ?";
 
 	public static final String GET_SSU_FROM_USERID = "select * from ssu where userid= ?";
 
@@ -78,8 +79,12 @@ public class SsuFactory implements IDatabaseFactory<SimpleStatusUpdate, SsuPostD
 
 	@Override
 	public SimpleStatusUpdate getById(String ssuId) {
-		SimpleStatusUpdate ssu = this.jdbcTemplate.queryForObject(GET_SSU_FROM_ID, new Object[] {ssuId}, new SsuValuesMapper());
-		return ssu;
+		List<SimpleStatusUpdate> ssu = this.jdbcTemplate.query(GET_SSU_FROM_ID, new Object[] {ssuId}, new SsuValuesMapper());
+		if(ssu.size() >0) {
+			return ssu.get(0);
+		} else {
+			return null;
+		}
 	}
 
 
@@ -107,6 +112,10 @@ public class SsuFactory implements IDatabaseFactory<SimpleStatusUpdate, SsuPostD
 			System.out.println("ERROR: FAILED TO PARSE STRING TO A SQL DATE TYPE");
 			e.printStackTrace();
 			return "-1";
+		} catch (DataIntegrityViolationException e) {
+			System.out.println("ERROR: VIOLATED KEY CONSTRAINT.");
+			e.printStackTrace();
+			return "-1";
 		}
 	}
 
@@ -118,7 +127,7 @@ public class SsuFactory implements IDatabaseFactory<SimpleStatusUpdate, SsuPostD
 	public int deleteById(String ssuId) {
 
 		try {
-			int rows = this.jdbcTemplate.update(DELETE_WITH_ID, ssuId);
+			int rows = this.jdbcTemplate.update(DELETE_WITH_ID, new Object[] {ssuId});
 			return rows;
 		}
 		catch (RuntimeException e){

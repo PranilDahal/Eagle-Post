@@ -61,7 +61,7 @@ public class SsuControllers {
 	 * @param ssuid - the unique ssuid of the SSU to delete
 	 * @return DELETE - http://localhost:8080/SSU/{userid} - Returns 1 if deleted, or -1 if unsuccessful
 	 */
-	@RequestMapping(value = "/{ssuId}", method = RequestMethod.POST)
+	@RequestMapping(value = "/{ssuId}", method = RequestMethod.DELETE)
 	public int deleteById(@PathVariable("ssuid") String ssuId) {
 		int deletion = SsuFactory.deleteById(ssuId);
 		return deletion;
@@ -83,7 +83,7 @@ public class SsuControllers {
 		// *** TEST IF THE API WORKS *** Build and run the server and call the URL to test if it returns data.
 		// *** Stay in touch with whoever is doing Issue #30. SSUs don't have a userid identifiers yet. Issue #30 implements userid 
 		// for SSU class. Have him/her merge his code first, then test your code. OR work together in the same branch with him/her.***
-		return null;
+		return SsuFactory.getAllByUserId(userid);
 	}	
 	
 	/**

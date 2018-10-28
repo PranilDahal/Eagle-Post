@@ -44,7 +44,7 @@ public class HumanUserFactory implements IDatabaseFactory<HumanUser, HumanUserPo
 	public void setDataSource(DataSource dataSource) {
 		this.jdbcTemplate = new JdbcTemplate(dataSource);
 		// Choosing the table name
-		this.insertHumanUser = new SimpleJdbcInsert(dataSource).withTableName("users");
+		this.insertHumanUser = new SimpleJdbcInsert(dataSource).withTableName("users").usingGeneratedKeyColumns("userid");
 	}
 
 	private static class HumanUsersRowMapper implements RowMapper<HumanUser> {
