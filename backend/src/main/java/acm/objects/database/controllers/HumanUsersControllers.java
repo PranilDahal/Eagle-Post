@@ -1,6 +1,7 @@
 package acm.objects.database.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -9,6 +10,8 @@ import org.springframework.web.bind.annotation.RestController;
 import acm.objects.HumanUser;
 import acm.objects.database.HumanUserFactory;
 import acm.objects.datahandlers.AccountSettingsData;
+import acm.objects.datahandlers.UserPublicInfo;
+
 import java.util.Date;
 
 @RestController
@@ -91,6 +94,25 @@ public class HumanUsersControllers {
 		// We don't want to return the password. That's not a safe practice.
 
 		return userDataWithoutPassword;
+	}
+	
+	/**
+	 * @param username - username to identify a user
+	 * @return GET - http://localhost:8080/userdata/users/{username} | Returns the data for a specific username
+	 */
+	@GetMapping("/publique/{userId}")
+	public UserPublicInfo basicInfo(@PathVariable("userId") String userid) {
+		HumanUser user = userFactory.getById(userid);
+
+		if(user != null) {
+			UserPublicInfo userDataWithoutPassword = new UserPublicInfo(
+					Integer.toString(user.getUserId()), 
+					user.getFirstName(), user.getLastName(), user.getUserName());
+
+			return userDataWithoutPassword;
+		}
+
+		return null;
 	}
 
 }

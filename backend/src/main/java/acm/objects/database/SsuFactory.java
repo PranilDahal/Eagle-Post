@@ -73,6 +73,7 @@ public class SsuFactory implements IDatabaseFactory<SimpleStatusUpdate, SsuPostD
 	@Override
 	public List<SimpleStatusUpdate> getAllFromDatabase() {
 		List<SimpleStatusUpdate> ssu = this.jdbcTemplate.query(GET_ALL_SSU, new SsuValuesMapper());
+		Collections.reverse(ssu);
 		return ssu;
 	}
 
