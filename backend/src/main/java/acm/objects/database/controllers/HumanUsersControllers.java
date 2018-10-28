@@ -35,72 +35,57 @@ public class HumanUsersControllers {
 		// We don't want to return the password. That's not a safe practise.
 		HumanUser user = userFactory.getById(userid);
 
+		//1
 
+		String fname =user.getFirstName();
 
-										 //1
+		//2
 
-										 String fname =user.getFirstName();
+		String lname =user.getLastName();
 
-										 //2
+		//3
 
-										 String lname =user.getLastName();
+		String cin = user.getCIN();
 
-										 //3
+		//4
 
-										 String cin = user.getCIN();
+		String phoneNumber = user.getPhoneNumber();
 
-										 //4
+		//5
 
-										 String phoneNumber = user.getPhoneNumber();
+		Date birthDate = user.getBirthDay();
 
-										 //5
+		//6
 
-										 Date birthDate = user.getBirthDay();
+		String emailAddress = user.getEmailAddress();
 
-										 //6
+		//7
 
-										 String emailAddress = user.getEmailAddress();
+		String secretCode = user.getSecretCode();
 
-										 //7
+		//8
 
-										 String secretCode = user.getSecretCode();
+		int userID = user.getUserId();
 
-										 //8
+		String userId = Integer.toString(userID);
 
-										 int userID = user.getUserId();
+		//9
 
-										 String userId = Integer.toString(userID);
+		String userName =user.getUserName();
 
-										 //9
+		userDataWithoutPassword = new AccountSettingsData (userId, fname, lname, userName, cin,
 
-										 String userName =user.getUserName();
+				phoneNumber,emailAddress, (java.sql.Date) birthDate, secretCode);
 
+		// TODO Issue 7 : Change this HumanUser object into AccountSettingsData and return it
 
+		//(Don't forget to document this API on the wiki)
 
-										 userDataWithoutPassword = new AccountSettingsData (userId, fname, lname, userName, cin,
+		// The difference between HumanUser and AccountSettingsData is that HumanUser objects have the passwords in them.
 
-																					 phoneNumber,emailAddress, (java.sql.Date) birthDate, secretCode);
+		// (Look at HumanUser.java and AccountSettingsData.java to see the difference)
 
-
-
-										 // TODO Issue 7 : Change this HumanUser object into AccountSettingsData and return it
-
-										 //(Don't forget to document this API on the wiki)
-
-
-
-										 // The difference between HumanUser and AccountSettingsData is that HumanUser objects have the passwords in them.
-
-										 // (Look at HumanUser.java and AccountSettingsData.java to see the difference)
-
-										 // We don't want to return the password. That's not a safe practice.
-
-
-
-
-
-
-
+		// We don't want to return the password. That's not a safe practice.
 
 		return userDataWithoutPassword;
 	}
