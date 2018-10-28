@@ -1,12 +1,198 @@
 <!DOCTYPE html>
-<html lang="en">
-  
+<html>
   <head>
-
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="account-settings.css">
   </head>
-
   <body>
 
+<div class="row">
+  <div id = "temp" class="col-3">
+
+  </div>
+
+
+
+  <div id = "small_cases" class="col-6">
+    <div class="container">
+      <table class = "card_background" style="width:100%; margin-top:20px; min-width: 350px;">
+        <tr >
+          <th class = "bg_yellow_custom" class = "bg_yellow_custom"colspan="2"  style="width:100%; text-align: center;"><h1>Account Information</h1></th><br>
+        </tr>
+        <tr >
+          <td  class = "p_text"><p style="margin-left: 12%; margin-top: 10px; margin-bottom: 6px;">First Name</p></td>
+          <td  class = "p_text"><p style="margin-left: 12%; margin-top: 10px; margin-bottom: 6px;">Last Name</p></td>
+        </tr>
+        <tr>
+          <td><input type="text" name="first_name" value=""  style="width:80%; margin-left: 10%;margin-right:10%"></td>
+          <td>  <input type="text" name="last_name" value=""  style="width:80%;margin-left: 5%;margin-right:5%"></td>
+        </tr>
+
+
+
+
+
+        <tr>
+          <td class = "p_text" > <p style="margin-left: 12%; margin-top: 10px; margin-bottom: 6px;">Username</p></td>
+
+        </tr>
+        <tr>
+          <td colspan="2"><input type="text" style=" margin-left: 5%; margin-right: 5%; width:90%;" name="username" value=""></td>
+        </tr>
+
+
+
+
+
+                <tr>
+                  <td class = "p_text"> <p style=" width: 100%; margin-left: 12%; margin-top: 10px; margin-bottom: 6px;">Email address</p></td>
+
+
+                </tr>
+                <tr>
+                  <td colspan="2"><input type="text" style=" margin-left: 5%; margin-right: 5%; width:90%;" name="email_address" value=""></td>
+                </tr>
+
+
+
+                <tr>
+                  <td class = "p_text"><p style="margin-left: 12%; margin-top: 10px; margin-bottom: 6px;">CIN</p></td>
+                  <td class = "p_text"><p style="margin-left: 12%; margin-top: 10px; margin-bottom: 6px;">Phone Number</p></td>
+                </tr>
+                <tr>
+                  <td><input type="text" name="cin" value="" style="width:80%; margin-left: 10%;margin-right:10%"></td>
+                  <td>  <input type="text" name="phone_number" value="" style="width:80%; margin-left: 10%;margin-right:10%"></td>
+                </tr>
+
+
+                <tr>
+                  <td class = "p_text"><p style=" width: 100%; margin-left: 12%; margin-top: 10px; margin-bottom: 6px;">Secret Code</p></td>
+
+                </tr>
+                <tr>
+                  <td colspan="2"><input type="text" style=" margin-left: 5%; margin-right: 5%; width:90%; margin-bottom:10px;" name="secret_code" value=""></td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td colspan="1"><button class = "bg_yellow_custom .card_backgrounds" name="save_button" value="" style="border-radius: 5px; width: 90%; margin-bottom:5px;height:40px;margin-right:10%; font-size: 20px;"> SAVE</button></td>
+                </tr>
+
+
+
+      </table>
+      <br><br><br>
+
+
+
+
+
+
+
+
+
+
+      <!-- table 2 -->
+      <table style="width:100%; min-width: 350px;"  class = "card_background card_background">
+
+        <tr>
+
+          <td colspan="2"  style="width:100%;">
+            <div class="" style="width:30%; display: inline;">
+
+              <p style="display:inline; margin:8px;color:#f1c40f;font-size:22px; ">Username</p>
+              <br>
+
+              <p style="display: inline; margin:8px;">Real Name</p>
+            </div>
+
+            <p style=" float:right; width: 60%; margin-right: auto; margin-left: auto; margin-top: -10px; padding-bottom:5px; float:right; display: inine; font-size: 25px; font-weight: bold; "> Looking To Join A Club?</p>
+          </td>
+
+        </tr>
+
+        <tr>
+          <td rowspan="1" colspan="2"  style="width:90%; padding-right: 5%; padding-left: 5%;" > ____ Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor laborum.sed do eiusmod tempor laborum. </td>
+          <td rowspan="1" colspan="2"  style="width:90%; padding-right: 5%; padding-left: 5%;"></td>
+        </tr>
+        <tr>
+
+          <td colspan="2">
+            <p style="width:100%; padding-right: 5%; padding-left: 5%; display: inline; float:right;">#topic1 #topic2 #topic3 #topic4 #topic5</p>
+          </td>
+
+        </tr>
+        <tr class="bg_yellow_custom">
+          <td colspan="1"  style="width:100%;">
+            <img src="images/blackbird.png" style="float:left;inline; margin-top: 5px;max-height:50px;" alt="">
+            <p class=""style="float:left; margin-left: 10px;padding-top:20px;">86 Likes</p>
+
+          </td>
+          <td colspan="1"  style="width:100%;">
+
+            <img src="images/compress.png" alt="" style="max-height:40px; height: 40px;float:right; margin:5px;">
+          </td>
+
+
+        </tr>
+
+
+      </table>
+
+
+    </div>
+  </div>
+
+
+
+
+  <div id = "temp" class="col-3">>
+
+  </div>
+
+</div>
   </body>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+  <script type="text/javascript">
+
+
+   function device_changing(){
+
+     if (window.innerWidth<= 800) {
+       document.getElementById("small_cases").classList.remove('col-6');
+       document.getElementById("small_cases").classList.add('col-12');
+
+       document.getElementById("temp").classList.remove('col-3');
+       document.getElementById("temp").classList.add('col-0');
+
+
+
+
+     // download complicated script
+     // swap in full-source images for low-source ones
+   }else {
+     document.getElementById("small_cases").classList.remove('col-12');
+     document.getElementById("small_cases").classList.add('col-6');
+
+
+     document.getElementById("temp").classList.remove('col-0');
+     document.getElementById("temp").classList.add('col-3');
+
+   }
+
+
+   }
+
+   window.addEventListener("resize", device_changing);
+
+
+device_changing()
+
+
+
+ </script>
 
 </html>

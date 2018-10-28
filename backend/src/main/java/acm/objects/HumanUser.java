@@ -8,30 +8,30 @@ import org.springframework.security.core.userdetails.UserDetails;
 
 /**
  * @author Pranil
- * 
+ *
  * @description This is a class for user accounts that are personal.
  *
  */
 public class HumanUser implements UserDetails{
-	
+
 	public int userid;
 
 	public String firstname;
-	
+
 	public String lastname;
-	
+
 	public String username;
-	
+
 	public String password;
-	
+
 	public String cin;
-	
+
 	public String phonenumber;
-	
+
 	public String emailaddress;
-	
+
 	public Date birthday;
-	
+
 	public String secretcode;
 
 	public HumanUser(int userId, String firstName, String lastName, String userName, String password, String cin,
@@ -48,6 +48,7 @@ public class HumanUser implements UserDetails{
 		this.birthday = birthDay;
 		this.secretcode = secretCode;
 	}
+	
 
 	public String getFirstName() {
 		return firstname;
