@@ -1,0 +1,227 @@
+@import url('https://fonts.googleapis.com/css?family=Oswald');
+
+body{
+    margin: 0;
+    padding: 0;
+    background: url(../img/login/background.png);
+    background-size:     cover;              
+    background-repeat:   no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+    font-family: 'Oswald', sans-serif;
+    color: white;
+}
+
+.signup-page-logo {
+    position: relative;
+    right: 0%;
+    top: 3%;
+}
+
+.signup-page-logo img {
+    width: 300px;
+    position: relative;
+    left: 5%;
+    z-index: -99;
+}
+
+.signup-page-logo p {
+    font-size: 65px;
+    position: relative;
+    left: 3.3em;
+    top: -1.6em;
+    color: #f1c40f;
+}
+
+.signup-page-logo a {
+    font-size: 150px;
+    position: relative;
+    left: -5%;
+    top: 10px;
+}
+
+.signup_container{
+    height: 850px;
+    width: 580px;
+    position: absolute;
+    right: 12%;
+    top: 10%;
+    background-color:rgb(255, 255, 255,0.6);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 10px;
+}
+
+#agreement {
+    position: relative;
+    top: -18%;
+    font-size: 15px;
+    margin: 5%;
+    right: -8%;
+    white-space: nowrap;
+}
+
+.signup-title {
+    width: 200px;
+    right: 310px;
+    position: absolute;
+    font-size:70px;
+    color: rgb(95, 95, 95);
+    font-family: 'Oswald', sans-serif;
+}
+
+.signup_container p {
+    width: 400px;
+    right: 70px;
+    position: absolute;
+    font-size: 20px;
+    top: 90px;
+    color: #555;
+}
+
+.signup-username {
+    margin-left: 8%;
+    margin-right: 8%;
+    margin-top: 0%;
+    margin-bottom: 0%;
+    position: relative;
+}
+
+.signup-email {
+    margin: 8%;
+    top: -15%;
+    position: relative;
+    white-space: nowrap;
+}
+
+.signup-username p {
+    font-size: 12px;
+    top: 34px;
+    left: 7px;
+}
+
+.signup_first-last_name {
+    margin: 8%;
+    white-space: nowrap;
+    position: relative;
+    top: 10%;
+}
+
+#name_error {
+    position: absolute;
+    top: 70%;
+    left: 1%;
+}
+
+.signup-username input {
+    width: 100% !important;
+}
+
+.signup-cin-code {
+    margin: 8%;
+    top: -6%;
+    position: relative;
+    white-space: nowrap;
+}
+
+#error-display {
+    position: absolute;
+    top: 74%;
+    left: 2%;
+}
+
+.signup-date {
+    margin-left: 8%;
+    margin-right: 8%;
+    margin-bottom: 5%;
+    white-space: nowrap;
+    position: relative;
+    top: 4%;
+}
+
+.signup-date p{
+    top: -10px;
+    left: 10px;
+}
+
+.signup-date select {
+    width: 33.3% !important;
+    height: 35px;
+    color: #555;
+    
+}
+
+#cin {
+    width: 30% !important;
+}
+
+.signup-input-tags {
+    border-radius: 4px;
+    display:inline-block;
+    padding: 10px 10px;
+    font-size: 14px;
+    margin: 5px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    width: 50%;
+}
+
+span {
+	font-size: 15px;
+    color:#e74c3c;
+}
+
+#textcode {
+    border-radius: 4px;
+    display:inline-block;
+    padding: 10px 10px;
+    font-size: 14px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    width: 50%;
+    width: 69.3% !important;
+}
+
+.signup-button {
+    margin: 8%;
+    position: relative;
+    top: -160px;
+    text-align: center;
+    right: 0px;
+}
+
+#signup-submit {
+    background-color: #f1c40f;
+    width: 70%;
+    height: 6%;
+    font-family:'Oswald', sans-serif;
+    color: rgb(255, 255, 255);
+    font-size: 26px;
+    display:inline-block;
+    border-radius: 4px;
+    text-decoration: none;
+    border: none;
+}
+
+#signup-submit:hover {
+    background-color: #dab215;
+}
+
+#signup-submit:focus {
+    outline: 0;
+}
+
+#signinredirect {
+    text-decoration: none;
+    color: inherit;
+    position: relative;
+    top: -190px;
+    text-align: center;
+    left: 220px;
+}
+
+#phonenumbererror {
+    position: absolute;
+    top: 100%;
+    left: 2%;
+}

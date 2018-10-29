@@ -1,35 +1,44 @@
 <template>
   <div id="App" class="main_app">
-    <Header></Header>
-    <SsuList></SsuList>
-    <Footer></Footer>
-</div>
+    <router-view></router-view>
+  </div>
 </template>
 
 <script>
-import Header from './components/Header'
-import SsuList from './components/SsuList'
-import Footer from './components/Footer'
+import { mapGetters } from 'vuex'
 
 export default {
+  
   name: 'App',
 
   components: {
-    Header,
-    SsuList,
-    Footer
-  },
-  
-  methods:{
 
+  },
+
+  computed: {
+      ...mapGetters({ currentUser: 'currentUser' })
+    },
+
+    created () {
+      this.checkCurrentLogin()
+    },
+
+    updated () {
+      this.checkCurrentLogin()
+    },
+
+    methods: {
+
+      checkCurrentLogin () {
+        if (!this.currentUser && this.$route.path !== '/signup') {
+          this.$router.push('/login')
+        }
+      }
+
+    }
   }
-}
 </script>
 
 <style>
-@import './assets/css/generic-classes.css';
-@import './assets/css/header.css';
-@import './assets/css/ssu.css';
-@import './assets/css/footer.css';
 
 </style>

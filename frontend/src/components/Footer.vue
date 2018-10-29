@@ -7,7 +7,7 @@
 
 				<div class="col col-sm">
 					<a href="http://acm.calstatela.edu" target="_blank">
-						<img src="./../assets/img/acm-logo-white.png" hspace="20" alt="Cal State LA ACM" style="width:50px;height:50px;float:left;"
+						<img src="./../assets/img/acm-logo-white.png" hspace="20" alt="Cal State LA ACM" style="width:50px;height:50px;float:left;margin-right:10px;"
 						class="pull-left">
 					</a>
 

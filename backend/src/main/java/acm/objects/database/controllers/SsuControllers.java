@@ -53,7 +53,7 @@ public class SsuControllers {
 
 		String id = SsuFactory.insertToDatabase(DataToAdd);
 
-		return Collections.singletonMap("id", id+"");
+		return Collections.singletonMap("newSsuId", id+"");
 	}
 	
 	/**

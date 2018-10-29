@@ -7,14 +7,6 @@ a:hover, a:visited, a:link, a:active
     text-decoration: none;
 }
 
-body {
-  line-height: 23px;
-  font-size: 14px;
-  font-weight: normal;
-  color: #777777;
-  font-family: "Open Sans", sans-serif;
-}
-
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Enriqueta', serif;
 }

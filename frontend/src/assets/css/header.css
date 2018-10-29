@@ -1,6 +1,12 @@
 /* ****************************** HEADER CSS ***********************************/
 @import url('https://fonts.googleapis.com/css?family=Enriqueta:400,400,600');
 
+.body{
+  background: #ffffff;
+  background-image: none;
+  background: none;
+}
+
 .top_menu {
     background: #38011b;
     width: 100%;
@@ -23,8 +29,9 @@
     color: #fff;
   }
 
-.graduation_cap{
+.head_icon{
   color: #fff;
+  padding: 0px 20px;
 }
   
   

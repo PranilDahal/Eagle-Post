@@ -12,12 +12,23 @@
 					</a>
 
 					<!-- TODO Issue #3 - When user clicks this "Post" text, a form should appear -->
-					<a class="navbar_link golden_link" href="">Post</a>
+					<a class="navbar_link golden_link" href="#" v-on:click="$emit('post')" title="New Post">Post</a>
 
 					<ul class="navbar-nav">
 						<li class="navbar-menu-item">
-							<a class="navbar_link golden_link" href="index.html">Home</a>
-							<a href="" class="fa fa-graduation-cap golden_link graduation_cap"></a>
+
+							<router-link to="/home">
+								<a class="navbar_link golden_link" href="" title="Home" v-on:click="goHome()">Home</a>
+							</router-link>
+
+							<router-link to="/accountsettings">
+								<a href="#" title="Account Info" class="fa fa-graduation-cap golden_link head_icon"></a>
+							</router-link>
+
+							<router-link to="/logout" title="Logout">
+								<a href="#" class="fa fa-share-square-o golden_link head_icon"></a>
+							</router-link>
+						
 						</li>
 					</ul>
 
@@ -35,7 +46,9 @@
 		name: 'Header',
 
 		methods: {
-
+			goHome(){
+				this.$router.replace(this.$route.query.redirect || '/home')
+			}
 		},
 	}
 </script>

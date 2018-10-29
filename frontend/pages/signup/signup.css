@@ -1,11 +1,7 @@
 body{
-    margin: 0;
-    padding: 0;
-    background: url(/src/assets/img/background.jpg);
-    background-position: center;
-    background-repeat: no-repeat;
+
+
     font-family: 'Oswald', sans-serif;
-    color: white;
 }
 
 .logo {

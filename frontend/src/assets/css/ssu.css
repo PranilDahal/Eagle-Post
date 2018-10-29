@@ -1,6 +1,7 @@
 /* ******************************SSU CSS********************************** */
 
 @import url('https://fonts.googleapis.com/css?family=Enriqueta:400,400,600');
+@import url('https://fonts.googleapis.com/css?family=Oswald');
 
  .post_style_A {
     margin-bottom: 100px;
@@ -17,43 +18,96 @@
     margin-top: -100px;
     position: relative;
     color: #777777;
-    border-radius: 15px;
+    border-radius: 5px;
     font-size: 12px;
     font-family: 'Enriqueta', serif;
     margin-bottom: 20px;
     font-weight: 500;
-    -webkit-box-shadow: 0px 10px 10px 0px rgba(163, 145, 9, 0.1);
-    box-shadow: 0px 10px 10px 0px rgba(224, 228, 8, 0.1);
-    padding: 10px;
+    box-shadow: 0 3px 20px 0px rgba(0, 0, 0, 0.1);
+    -moz-box-shadow: 0 3px 20px 0px rgba(0, 0, 0, 0.1);
+    -webkit-box-shadow: 0 3px 20px 0px rgba(0, 0, 0, 0.1);
+    -o-box-shadow: 0 3px 20px 0px rgba(0, 0, 0, 0.1);
+    -ms-box-shadow: 0 3px 20px 0px rgba(0, 0, 0, 0.1);
+    padding: 4px 0px 0px 0px;
     display: inline-block;
-    line-height: 28px;
+    line-height: 20px;
+    width: 100%;
   }
   
   .post_heading {
     font-size: 24px;
-    font-family: 'Enriqueta', serif;
+    font-family: 'Oswald', sans-serif;
     line-height: 30px;
     color: #222222;
-    padding-right: 20px;
+    padding: 0px 20px 0px 0px;
     font-weight: 900;
-    margin-bottom: 10px;
+    margin-right: 10px;
+    text-align: center;
   }
   
   .post_description {
-    font-size: 14px;
+    font-family: 'Enriqueta', serif;
+    font-size: 15px;
     line-height: 24px;
-    color: #777777;
+    color: #181717;
     margin-bottom: 13px;
+    margin-left: 10px;
   }
   
-  .post_sub_details_links {
-    color: #777777;
-    font-size: 13px;
+  .calendar_display {
+    margin-left: 5%;
+    color: #ffffff;
+    font-size: 15px;
     font-weight: normal;
     font-family: 'Enriqueta', serif;
-    margin-right: 23px;
   }
 
   .main_ssu_block {
 
+  }
+
+  .trash-button{
+    float: right;
+    color: #ffffff;
+    position: relative;
+    margin-right: 10px;
+    margin-top: 15px;
+  }
+
+  .trash-button:hover{
+    color: #c80000;
+  }
+
+  .username {
+    font-size: 24px;
+    color: #f1c40f;
+    margin-left: 10px;
+  }
+
+  .likes{
+    color: #ffffff;
+    line-height: 40px;
+    margin-left: 10px;
+  }
+
+  .date{
+    background-color: #f1c40f;
+    width: 100%;
+    line-height: 20px;
+  }
+
+  .first-last-name{
+    margin-left: 10px;
+    border-bottom: 1px solid rgb(87, 87, 87);
+    color: #666666;
+  }
+
+  .edit_ssu_icon{
+    margin-right: 10px;
+    margin-top: 15px;
+  }
+
+  .account_settings_heading{
+    color: #ffffff;
+    text-align: center;
   }
